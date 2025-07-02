@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.conteudo{
+    display: flex;
+    background-color: #ffb6c1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    
+}
+.texto{
+    font-size: 30px;
+    margin-inline: 100px;
+    margin-top: 70px;
+}
+.butao{
+    margin-top: 100px;
+    margin-inline: 50px;
+    padding: 12px;
+    padding-inline: 17px;
+    border-radius: 20px;
+    background-color: lightblue;
+    border: none;
+    color: #ffff;
+}
+.imagem img{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 80vh;
+    margin-inline: 0 100px;
+    border-radius: 5px;
+}
+#cao{
+    margin-top: 70px;
+}
+#gato{
+    margin-bottom: 70px;
+}
+.comunidade{
+    background-color: #B19CD9;
+    height: 80vh;
+}
+#cao-png{
+    height: 65vh;
+    margin: 20px;
+}
+.texto h1{
+    margin: 10px 0 10px 0;
+}
+.opcoes-comunidade{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: #989ffe;
+    height: 70vh;
+    margin-block: 40px;
+    margin-inline: 170px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    gap: 20px;
+    
+}
+.opcoes-comunidade2{
+    height: 100%;
+    display: grid;
+    grid-template-areas: 'opcao1 opcao2'
+                        "opcao3 opcao4";
+    padding: 10px;
+    margin: 10px;
+    gap: 20px;
+}
+.opcao{
+   /* height: 200px;
+    width: 200px;*/
+    margin: 10px;
+    font-size: 1.3rem;
+}
+#opcao1{
+    grid-area: 'opcao1';
+}
+#opcao2{
+    grid-area: 'opcao2';
+}
+#opcao3{
+    grid-area: "opcao3";
+}
+#opcao4{
+    grid-area: "opcao4";
+}
+.opcao button{
+    margin-inline: 100px;
+    padding: 10px ;
+}

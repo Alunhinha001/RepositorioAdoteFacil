@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  background-color:#FBE4FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+header img {/*logo*/
+  height: 100px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+nav ul li a:hover{
+    color:#ae1b89;
+}
+/*Menu hamburguer*/
+#menu-toggle{
+  display: none;
+}
+.menu-icon{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.menu-icon div{
+  width: 25px;
+  height: 3px;
+  background-color: #ae1b89;
+  margin: 4px 0;
+}
+
+@media (max-width:768px){
+   .menu-icon{
+       display: flex;
+    }
+    nav ul{
+        display: none;
+        margin: 10px 0;
+    }
+    .menu-toggle{
+        display: flex;
+        
+    }
+}
+nav ul.active{
+    display:flex;
+}
+/* Parte da Laura */
+/*foorter*/
+.footer{
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.info-left h2{
+  font-size: 24px;
+  margin-bottom:10px ;
+}
+.app buttons img{
+    width: 120px;
+    margin: 10px 5px 0 0;
+}
+.copy {
+    text-align: center;
+    margin-top: 20px ;
+    font-size: 0.9rem;
+}
+
