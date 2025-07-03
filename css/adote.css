@@ -33,15 +33,17 @@ body{
 }
 .pet-card p{
     margin-block: 5px;
+  
 }
 .pet-card:hover {
     transform: scale(1.03);
 }
 .pet-card img {
     width: 100%;
-    height: auto;
+    height: 225px;
     border-radius: 10px;
     margin: 0;
+    min-height: 225px;
 }
 .sobre{
     display: none;
@@ -65,4 +67,4 @@ body{
     display: block;
     margin-bottom: 20px;
   }
-}
+} 
