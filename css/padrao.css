@@ -18,10 +18,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 33vh;
 }
 
 .logo img {
-    width: 95px;
+  margin-left: 33vh;
+    width: 150px;
+    margin-block: 2px;
     height: auto; /* Mantém a proporção da imagem */
 }
 
@@ -66,7 +69,8 @@ header {
 /* Footer da laura */
 footer {
   background-color: #f8f9fa;
-  padding: 40px 20px;
+  margin: 0px;
+  padding: 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -75,9 +79,13 @@ footer {
   border-top: 2px solid #ccc;
 }
 
+#cl1{
+  margin-left: 33vh;
+}
 .footer-coluna {
   flex: 1 1 250px;
   margin: 10px;
+  min-height: 200px;
 }
 
 .footer-coluna h2 {
@@ -103,13 +111,27 @@ footer {
   font-weight: bold;
   margin-top: 10px;
 }
+.app-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.footer-coluna img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
 
 .footer-rodape {
   width: 100%;
   text-align: center;
   margin-top: 30px;
   border-top: 1px solid #ddd;
-  padding-top: 10px;
+  padding-top: 20px;
   font-size: 13px;
   color: #777;
+
 }
