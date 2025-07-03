@@ -1,8 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+}
 body{
     font-family: Arial, sans-serif;
     background-color: #fefefe;
-    margin: 0;
-    padding: 20px;
     color: #333;
 }
 .h2{
@@ -23,19 +25,44 @@ body{
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 16px;
+    padding: 0;
+    margin: 10px;
     width: 250px;
     text-align: center;
     transition: transform 0.2s;
 }
-pet-card:hover {
+.pet-card p{
+    margin-block: 5px;
+}
+.pet-card:hover {
     transform: scale(1.03);
 }
 .pet-card img {
     width: 100%;
     height: auto;
-    border-radius: 50px;
+    border-radius: 10px;
+    margin: 0;
 }
-.pet-card h2{
-    margin: 0 ;
+.sobre{
+    display: none;
+}
+.saiba{
+    padding: 8px;
+    margin-block: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightsteelblue;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.saiba:hover{
+    transform: scale(1.03);
+    background-color: lightblue;
+}
+@media (max-width: 600px) {
+  .vitrine {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
 }
