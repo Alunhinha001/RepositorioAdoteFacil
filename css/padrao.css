@@ -63,48 +63,53 @@ header {
     }
 }
 
-/* Footer */
+/* Footer da laura */
 footer {
-    background-color:#FFFFFF;/* Cor de fundo do footer */
-    padding: 20px;
-    display: flex;
-    flex-wrap:nowrap;
-    justify-content: space-between;
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #333;
+  font-family: Arial, sans-serif;
+  border-top: 2px solid #ccc;
 }
 
 .footer-coluna {
-    flex: 1;
-    margin: 5px;
+  flex: 1 1 250px;
+  margin: 10px;
 }
 
 .footer-coluna h2 {
-    margin-bottom: 10px;
+  font-size: 20px;
+  color: #4b0082; /* roxo */
+  margin-bottom: 10px;
 }
 
-.footer-coluna p, .footer-coluna a {
-    color: #000; /* Cor do texto */
-    text-decoration: none; /* Remove o sublinhado dos links */
+.footer-coluna p,
+.footer-coluna a {
+  font-size: 14px;
+  color: #444;
+  margin: 4px 0;
+  text-decoration: none;
 }
 
 .footer-coluna a:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
+  text-decoration: underline;
+  color: #2e8b57; /* verde escuro */
 }
 
-.app-link {
-    text-decoration:none;
-    color:#7A8CCB;
-    background-color:rgb(255, 255, 255);
-    padding: 5px 10px;
-    border-radius: 5px;
+.app-disponivel p:first-child {
+  font-weight: bold;
+  margin-top: 10px;
 }
-.app-link:hover {
-    background-color:#FFFFFF;
-}
-.app-link:active{
-    color: white;
-  background-color: rgb(7, 7, 7);
-}
+
 .footer-rodape {
-    text-align:right;
-    margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #777;
 }
