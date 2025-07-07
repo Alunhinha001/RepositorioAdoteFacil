@@ -1,38 +1,130 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Conteúdo principal */
+#ajuda {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
-h2{
-    text-align: center;
-    font-size: 25px;
-    margin-top: 10px;
-}
-h3{
-    text-align: center;
-    font-size:30px ;
-    margin: 20px 0 12px 0;
 
+h1, h2, h3, h4 {
+    color: #355c7d; /* Azul escuro suave */
+    margin-bottom: 15px;
 }
-h4{
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
     text-align: center;
-    font-size: 35px;
 }
-img{
-    
-    width: 700px;
-    padding: 30px;
-    align-items: center;
-    
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
 }
-.canil{
-    height: 490px;
+
+h3 {
+    font-size: 1.4rem;
+    margin-top: 25px;
+    font-weight: 600;
 }
-p{
-    font-size: 25px;
-    text-align: justify;
+
+p {
+    margin-bottom: 15px;
+    font-size: 1rem;
 }
-main{
-    margin: 10px 80px 0 80px;
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 25px;
+    list-style-type: disc;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+.titulo-ajuda {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.titulo-ajuda h1 {
+  font-size: 2.8rem;
+  color: #355c7d; /* azul principal da paleta */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.linha-decorativa {
+  width: 100px;
+  height: 4px;
+  background-color: #355c7d;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+#call-to-action {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 10vh; 
+  margin-bottom: 150px; 
+  text-align: center;
+}
+
+#call-to-action h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #355c7d; /* azul da paleta */
+}
+
+
+/* Imagens depoimento dentro do conteúdo */
+img.depoimento {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+#depoimentos h2 {
+  color: #355c7d;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.depoimento-bloco p {
+  font-style: italic;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 10px auto 5px auto;
+  color: #555;
+}
+
+.depoimento-bloco strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.depoimento {
+  border-radius: 50%;
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+
+/* Responsividade para imagens depoimento */
+@media (max-width: 600px) {
+    img.depoimento {
+        max-width: 90%;
+        margin: 15px auto;
+    }
 }

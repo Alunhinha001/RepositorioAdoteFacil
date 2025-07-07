@@ -35,9 +35,26 @@
     </header>]
 
     <main>
-        <h1>Login</h1>
+        <div class="login-container">
+            <h1>Entrar</h1>
+            <div class="linha-decorativa"></div>
 
+            <form class="login-form" action="processar-login.php" method="POST">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
+
+            <button type="submit" class="botao">Entrar</button>
+            </form>
+
+            <div class="cadastro-link">
+            Ainda não possui uma conta? <a href="cadastrar.html">Cadastre-se</a>
+            </div>
+        </div>
     </main>
+
     
     <footer>
 		<div class="footer-coluna" id="cl1">

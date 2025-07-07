@@ -3,135 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adote Fácil</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Adote Fácil - Cadastro de Pet</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/padrao.css" />
   <link rel="stylesheet" href="css/cadastropet.css" />
   <script src="/JS/cadastropet.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="../images/Logotipo.jpg" alt="logo_Adote_Fácil" />
-            </div>
-            <div class="dropdown">
-                <input type="checkbox" id="burger-menu">
-                <label class="burger" for="burger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-                </label>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../images/Logotipo.jpg" alt="logo_Adote_Fácil" />
+      </div>
+      <div class="dropdown">
+        <input type="checkbox" id="burger-menu" />
+        <label class="burger" for="burger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
-                <div class="dropdown-content">
-                <a href="index.html">Início</a>
-                <a href="sobre.html">Sobre Nós</a>
-                <a href="adote.html">Adote um pet</a>
-                <a href="comoajudar.html">Como ajudar</a>
-                <a href="entrar.html">Entrar</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+        <div class="dropdown-content">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre Nós</a>
+          <a href="adote.html">Adote um pet</a>
+          <a href="comoajudar.html">Como ajudar</a>
+          <a href="entrar.html">Entrar</a>
+        </div>
+      </div>
+    </nav>
+  </header>
 
+  <main>
     <div class="boxpet">
+      <form action="#" method="post" enctype="multipart/form-data">
         <fieldset>
-            <legend><b>Cadastre seu Pet</b></legend>
-            <br>
-            <div class="inputBox">
-            <label for="nome" class="labelinput">Nome do Animal</label>
-            <br>
-            <input type="text" name="nome" id="nome" class="inputUser" required>
-        </div>
-        <br>
-        <div class="inputBox">
-            <label for="genero" class="labelinput">Informe o genêro do seu animal</label>
-            <br>
-            <select name="genero" id="genero" required>
-                <option value="">Selecione o genero</option>
-                <option value="M">Macho</option>
-                <option value="F">Femêa</option>
-            </select>
-        </div>
-        <br>
-        <div class="inputBox">
-            <label for="peso" class="labelinput">Peso</label>
-            <br>
-            <input type="text" name="peso" id="peso" class="inputUser" required>
-        </div>
-        <br>
-        <div class="inputBox">
-            <label for="idade" class="labelinput">Idade aproximada</label>
-            <br>
-            <input type="number" name="idade" id="idade" class="inputUser" required>
-        </div>
-        <br>
+          <legend><b>Cadastre seu Pet</b></legend>
+
           <div class="inputBox">
-            <label for="especie" class="labelinput">Especie</label>
-            <br>
-            <input type="text" name="especie" id="especie" class="inputUser" required>
-        </div>
-        <br>
+            <label for="nome" class="labelinput">Nome do Animal</label>
+            <input type="text" name="nome" id="nome" class="inputUser" required />
+          </div>
+
+          <div class="inputBox">
+            <label for="genero" class="labelinput">Informe o gênero do seu animal</label>
+            <select name="genero" id="genero" required>
+              <option value="">Selecione o gênero</option>
+              <option value="M">Macho</option>
+              <option value="F">Fêmea</option>
+            </select>
+          </div>
+
+          <div class="inputBox">
+            <label for="peso" class="labelinput">Peso (kg)</label>
+            <input type="number" name="peso" id="peso" class="inputUser" step="0.1" min="0" required />
+          </div>
+
+          <div class="inputBox">
+            <label for="idade" class="labelinput">Idade aproximada (anos)</label>
+            <input type="number" name="idade" id="idade" class="inputUser" min="0" required />
+          </div>
+
+          <div class="inputBox">
+            <label for="especie" class="labelinput">Espécie</label>
+            <input type="text" name="especie" id="especie" class="inputUser" required />
+          </div>
+
           <div class="inputBox">
             <label for="porte" class="labelinput">Porte</label>
-            <br>
-            <input type="text" name="porte" id="porte" class="inputUser" required>
-        </div>
-        <br>
+            <input type="text" name="porte" id="porte" class="inputUser" required />
+          </div>
+
           <div class="inputBox">
             <label for="raca" class="labelinput">Raça</label>
-            <br>
-            <input type="text" name="raca" id="raca" class="inputUser" required>
-        </div>
-        <br>
+            <input type="text" name="raca" id="raca" class="inputUser" required />
+          </div>
+
           <div class="inputBox">
             <label for="local" class="labelinput">Local</label>
-            <br>
-            <input type="text" name="local" id="local" class="inputUser" required>
-        </div>
-        <br>
+            <input type="text" name="local" id="local" class="inputUser" required />
+          </div>
+
           <div class="inputBox">
             <label for="sobre" class="labelinput">Sobre o Pet</label>
-            <br>
-            <input type="text" name="sobre" id="sobre" class="inputUser">
-        </div>
-        <br>
+            <textarea name="sobre" id="sobre" class="inputUser" rows="4" placeholder="Conte um pouco sobre seu pet..."></textarea>
+          </div>
+
           <div class="inputBox">
             <label for="imagem" class="labelinput">Insira uma foto do Animal</label>
-            <br>
-            <input type="image" name="imagem" id="imagem" class="inputUser">
-            <button>Enviar</button>
-            </div>
-            <p>Ao clicar no botão você estará automaticamente concordando com os nossos <a href=""> Termo de Uso e Política de Privacidade</a> do site Adote Facil</p>
-         <button>SALVAR</button>
-        </fieldset>
-    </div>
+            <input type="file" name="imagem" id="imagem" class="inputUser" accept="image/*" required />
+          </div>
 
-      <footer>
-		<div class="footer-coluna" id="cl1">
-			<h2>Peludinhos do bem</h2>
-			<p>08989-8989898</p>
-			<p>Rua Santa Helena, 21, Parque Alvorada, Imperatriz - MA, CEP 65919-505</p>
-			<p>adotefacil@peludinhosdobem.org</p>
-		</div>
-		<div class="footer-coluna" id="cl2">
-			<a href="sobre.html">
-				<h2>Conheça a História da Peludinhos do Bem</h2>
-			</a>
-		</div>
-		<div class="footer-coluna" id="cl3">
-			<div class="app-link">
-				<p>DISPONÍVEL NA</p>
-				<a href="https://play.google.com/store/">PLAY STORE</a>
-			</div>
-			<div class="app-link">
-				<p>AVAIBLE ON THE</p>
-				<a href="https://www.apple.com/app-store/">APP STORE</a>
-			</div>
-		</div>
-		<div class="footer-rodape">
-			<p>&copy; 2025 by Peludinhos do Bem. Todos os direitos reservados.</p>
-		</div>
-	</footer>
+          <p>
+            Ao clicar no botão você estará automaticamente concordando com os nossos
+            <a href="#">Termo de Uso e Política de Privacidade</a> do site Adote Fácil
+          </p>
+
+          <button type="submit">Salvar</button>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-coluna" id="cl1">
+      <h2>Peludinhos do bem</h2>
+      <p>08989-8989898</p>
+      <p>Rua Santa Helena, 21, Parque Alvorada, Imperatriz - MA, CEP 65919-505</p>
+      <p>adotefacil@peludinhosdobem.org</p>
+    </div>
+    <div class="footer-coluna" id="cl2">
+      <a href="sobre.html">
+        <h2>Conheça a História da Peludinhos do Bem</h2>
+      </a>
+    </div>
+    <div class="footer-coluna" id="cl3">
+      <div class="app-link">
+        <p>DISPONÍVEL NA</p>
+        <a href="https://play.google.com/store/">PLAY STORE</a>
+      </div>
+      <div class="app-link">
+        <p>AVAILABLE ON THE</p>
+        <a href="https://www.apple.com/app-store/">APP STORE</a>
+      </div>
+    </div>
+    <div class="footer-rodape">
+      <p>&copy; 2025 by Peludinhos do Bem. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>

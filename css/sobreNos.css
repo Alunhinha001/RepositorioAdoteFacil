@@ -1,72 +1,74 @@
 body {
-    padding: 0;
-    margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+  line-height: 1.6;
 }
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #E6CCFF;
-    align-items: center;
-    padding: 0 20px;
-}
-img{
-    width: 150px;
-}
-ul li {
-    list-style: none; 
-    padding: 10px;
-    background-color: #8709fd18;  
-    border-radius: 20px;
-}
-a {
-    position: relative;
-    display: inline-block;
-    color: black;
-    text-decoration: none;
-    overflow: hidden;
-    cursor: pointer;
-}
-a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: black;
-    transition: width 0.3s ease;
-}
-li:hover a::after{
-    width: 100%;
-}
-ul {
-    display: flex;
-    gap: 20px;
-    justify-content: left;
-}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 10%;
-    padding: 0 60px;
-    background-color: #f7f7f7;
-    h1, h2{
-        font-size: 24pt;
-        margin: 5px;
-    }
-    p {
-        font-size: 18pt;
-        margin: 0;
-        margin-bottom: 20px;
-    }
-    
-}
-body {
-    background-color: #93a0fe;
-}
-.evidente {
-    background-color: #93a0fe;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
+.container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #4169e1;
+  margin-bottom: 10px;
+  position: relative;
+}
 
+.container h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #6ca0dc;
+  margin: 10px auto 20px;
+  border-radius: 2px;
+}
+
+.container h2 {
+  font-size: 1.6rem;
+  color: #4d4da3;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.container ul {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  list-style: disc;
+  color: #444;
+}
+
+.container ul li {
+  margin-bottom: 8px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+  }
+
+  .container p, .container ul {
+    font-size: 1rem;
+  }
+}
