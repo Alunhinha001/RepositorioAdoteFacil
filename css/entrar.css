@@ -3,7 +3,9 @@ body {
   background-color: #fefefe;
   color: #333;
 }
-
+#entrar{
+  background-color: #7a8ccb;
+}
 .login-container {
   max-width: 420px;
   margin: 40px auto;

@@ -7,7 +7,9 @@
     color: #333;
     line-height: 1.6;
 }
-
+#ajudar{
+  background-color: #7a8ccb;
+}
 h1, h2, h3, h4 {
     color: #355c7d; /* Azul escuro suave */
     margin-bottom: 15px;

@@ -54,7 +54,6 @@ header {
   align-items: center;
 }
 
-
 .logo img {
   width: 200px;
   height: auto;
@@ -135,6 +134,7 @@ header {
 .dropdown-content a:hover {
   background-color: var(--azul-hover);
 }
+
 
 /* MOBILE */
 @media (max-width: 768px) {
