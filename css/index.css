@@ -97,10 +97,12 @@ main {
   color: white;
   border: none;
   cursor: pointer;
-  padding: 10px 15px;
   border-radius: 50%;
   z-index: 2;
   transition: background-color 0.3s;
+
+  width: 50px;
+  height: 50px;
 }
 
 .seta:hover {
@@ -148,7 +150,7 @@ main {
 .opcao {
   background-color: #989ffe;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   width: 250px;
   text-align: center;
@@ -179,7 +181,12 @@ main {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.opcao button a{
+  color: #fff;
+  text-decoration: none;
 }
 
 .opcao button:hover,
@@ -311,6 +318,33 @@ main {
   background-color: #8ac88a;
 }
 
+.vejamais{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.vejamais a{
+  border: none;
+  color: #696969;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.vejamais img{
+  display: block;
+  width: 15px;
+  height: 12px;
+
+  margin: 0 30px;
+}
+
+.vejamais:hover{
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
 /* === RESPONSIVIDADE === */
 @media (max-width: 768px) {
   main {
@@ -342,6 +376,13 @@ main {
     margin: 20px 0;
   }
 
+  .comunidade{
+    height: 1250px;
+  }
+  .opcao{
+    flex-wrap: wrap;
+  }
+
   .slide {
     height: 280px;
   }
@@ -363,6 +404,26 @@ main {
     max-width: 100%;
     margin: 0 auto;
   }
+
+  .seta{
+    width: 35px;
+    height: 35px;
+  }
+
+  .seta.esquerda{
+    left: 10px;
+  }
+
+  .seta.direita{
+    right: 10px;
+  }
+  .cards-vitrini{
+    height: 1980px;
+    overflow: visible;
+  }
+  .vejamais{
+    margin: 20px 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -374,5 +435,10 @@ main {
   .comunidade,
   .cards-vitrini {
     padding: 0 !important;
+  }
+
+  .opcao{
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
