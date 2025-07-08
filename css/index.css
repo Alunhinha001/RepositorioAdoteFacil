@@ -14,7 +14,9 @@ html, body {
 body {
   background-color: #f8f8f8;
 }
-
+#inicio{
+  background-color: #7a8ccb;
+}
 /* === MAIN === */
 main {
   max-width: 1200px;
