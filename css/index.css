@@ -224,15 +224,20 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 15px;
+  padding: 0%;
   border-radius: 12px;
+  margin: 10px 0px 10px 10px;/*corrigido*/
+}
+
+.pet-card:hover {
+  transform: scale(1.02); /*corrigido*/
 }
 
 .pet-imagem {
   position: relative;
   width: 100%;
   height: 225px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 ,0;/*corrigido*/
   overflow: hidden;
   transition: opacity 0.3s ease;
 }
@@ -278,16 +283,15 @@ main {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 15px;
   overflow-y: auto;
-  box-sizing: border-box;
   border-radius: 12px;
   text-align: left;
-  z-index: 10;
-  word-wrap: break-word;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform: translateY(30px);
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 10;
+  margin: -15px; /*corrigido*/
 }
 
 .pet-card.expandido .pet-imagem {
