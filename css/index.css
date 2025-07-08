@@ -382,9 +382,6 @@ main {
     margin: 20px 0;
   }
 
-  .comunidade{
-    height: 1250px;
-  }
   .opcao{
     flex-wrap: wrap;
   }
@@ -424,7 +421,6 @@ main {
     right: 10px;
   }
   .cards-vitrini{
-    height: 1980px;
     overflow: visible;
   }
   .vejamais{
@@ -440,7 +436,7 @@ main {
   .conteudo,
   .comunidade,
   .cards-vitrini {
-    padding: 0 !important;
+    padding: 30px !important;
   }
 
   .opcao{
