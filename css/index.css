@@ -250,6 +250,7 @@ main {
 }
 
 .pet-info {
+  padding: 15px;
   margin-top: 10px;
   text-align: left;
   word-wrap: break-word;
