@@ -18,7 +18,7 @@ body {
 
 .login-container h1 {
   font-size: 2.4rem;
-  color: #355c7d;
+   color: #4169e1;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -26,7 +26,7 @@ body {
 .linha-decorativa {
   width: 90px;
   height: 4px;
-  background-color: #355c7d;
+  background-color:  #4169e1;
   margin: 0 auto 40px auto;
   border-radius: 2px;
 }
