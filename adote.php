@@ -1,3 +1,11 @@
+<?php
+include('PHP/conexao.php');//Inclui o arquivo de conexãocom o bd para estabelecer a conexão com o MySQL
+$sql = "SELECT * FROM pet"; //Prepara uma consulta Sql para selecionar as relações
+$consulta = $conn->prepare($sql);
+$consulta->execute();
+$pet = $consulta->fetchAll(PDO::FETCH_ASSOC); //Armazena todos os registros retornados pela consulta em um array associativo
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -40,8 +48,31 @@
             <h1>Encontre seu novo melhor amigo</h1>
             <p>Adotar é um gesto de amor. Veja os pets disponíveis e transforme uma vida.</p>
         </section>
+    <?php if (count($pet) > 0): ?>
+    <div class="vitrine">
+        <?php foreach ($pet as $animal): ?>
+            <div class="pet-card">
+                <div class="pet-imagem">
+                    <img src="PHP/imagensPet/<?= htmlspecialchars($animal['foto'])?>" alt="cachorrinho fofo" />
+                </div>
+                <div class="pet-info">
+                    <h2>Nome: <?php echo $animal['nome']; ?></h2>
+                    <p><strong>Idade:</strong> <?php echo $animal['idade']; ?> anos</p>
+                    <p><strong>Gênero:</strong> <?php echo $animal['genero']; ?></p>
+                    <p><strong>Local:</strong> <?php echo $animal['localidade']; ?></p>
+                </div>
+                <div class="sobre">
+                    <p><strong>Peso:</strong> <?php echo $animal['peso']; ?>kg</p>
+                    <p><strong>Espécie:</strong> <?php echo $animal['especie']; ?></p>
+                    <p><strong>Porte:</strong> <?php echo $animal['porte']; ?></p>
+                    <p><strong>Raça:</strong> <?php echo $animal['raca']; ?></p>
+                    <p><strong>Sobre pet:</strong> <?php echo $animal['sobre']; ?></p>
+                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
+                </div>
+                <button class="saiba">Saber mais</button>
+            </div>
+                <?php endforeach; ?>
 
-        <div class="vitrine">
             <div class="pet-card">
                 <div class="pet-imagem">
                     <img src="images/adote/capreto.jpg" alt="cachorrinho fofo" />
@@ -286,6 +317,9 @@
                 </div>
                     <button class="saiba">Saber mais</button>
             </div>
+            <?php else: ?>
+            <p>Nenhum usuario cadastrado.</p>
+    <?php endif; ?>
         </div>
             <div class="cadastro-pet-container">
                 <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
