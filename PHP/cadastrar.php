@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
-        $pasta = "uploads/";
+        $pasta = "imagensPet/";
         if (!is_dir($pasta)) {
             mkdir($pasta, 0777, true);
         }
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $inserir = $conn->prepare($sql);
         $inserir->execute([$nome, $genero, $peso, $idade, $especie, $porte, $raca, $localidade, $sobre, $foto]);
 
-        header("Location: index.html");
+        header("Location: ../index.html");
         exit;
 
     } catch (PDOException $e) {
