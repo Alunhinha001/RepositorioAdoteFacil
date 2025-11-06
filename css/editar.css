@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Wix+Madefor+Text:wght@400;600&display=swap');
+
+:root {
+  --roxo: #4b0082;
+  --roxo-claro: #fbe4ff;
+  --azul-principal: #97a2ff;
+  --azul-hover: #7a8ccb;
+  --verde-hover: #2e8b57;
+  --cinza-claro: #f8f9fa;
+  --cinza-medio: #ccc;
+  --cinza-escuro: #444;
+  --cinza-rodape: #777;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Wix Madefor Text', sans-serif;
+  background-color: var(--roxo-claro);
+  color: var(--cinza-escuro);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--roxo);
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+form {
+  background-color: #fff;
+  border: 2px solid var(--azul-principal);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--cinza-escuro);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cinza-medio);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-size: 15px;
+  font-family: 'Wix Madefor Text', sans-serif;
+}
+
+input:focus {
+  border-color: var(--azul-principal);
+}
+
+input[type="submit"] {
+  background-color: var(--azul-principal);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--azul-hover);
+}
+
+
+a {
+  margin-top: 20px;
+  color: var(--roxo);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+}
+
+a:hover {
+  color: var(--verde-hover);
+}
+
+
+@media (max-width: 600px) {
+  form {
+    padding: 25px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 14px;
+  }
+
+  input[type="submit"] {
+    font-size: 14px;
+  }
+}
