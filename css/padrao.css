@@ -188,7 +188,7 @@ footer {
     max-height: 200px;
 }
 #cl2 {
-    flex: 1 1 300px;
+    flex: 1 1 400px;
     margin-inline: 10px;
 }
 #cl3 {
@@ -216,6 +216,12 @@ footer {
     align-items: flex-start;
     margin-bottom: 15px;
 }
+#cl3 .app-link a img {
+    height: 55px !important;
+    width: auto !important;
+}
+
+
 .footer-rodape {
     width: 100%;
     text-align: center;
