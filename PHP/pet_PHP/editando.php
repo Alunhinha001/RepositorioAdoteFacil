@@ -80,6 +80,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <input type="submit" value="Atualizar">
     </form>
+    <form action="deleter.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este pet?');">
+        <input type="hidden" name="id" value="<?php echo $pet['id']; ?>">
+        <button type="submit">Deletar Pet</button>
+    </form>
     <a href="consulta.php">Voltar</a>
 </body>
 </html>
