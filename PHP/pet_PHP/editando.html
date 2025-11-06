@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <header>
         <nav class="navbar">
             <div class="logo">
-              <a href="index.html"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+              <a href="index.html"><img src="/images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
             </div>
             <div class="dropdown">
                 <input type="checkbox" id="burger-menu">
@@ -73,40 +73,71 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </nav>
     </header>
 <body>
-    <h1>Editar as Informações do Pet</h1>
-    <form method="POST">
-        <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome" value="<?php echo htmlspecialchars($pet['nome']);?>" required>
+    <main>
+        <h1>Editar as Informações do Pet</h1>
+        <form method="POST">
+            <!-- Primeira Coluna -->
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="nome">Nome do Pet</label>
+                    <input type="text" name="nome" id="nome" value="<?php echo htmlspecialchars($pet['nome']);?>" required>
+                </div>
 
-        <label for="email">Genero: </label>
-        <input type="genero" name="genero" id="genero" value="<?php echo htmlspecialchars($pet['genero']);?>" required>
+                <div class="input-group">
+                    <label for="genero">Gênero</label>
+                    <input type="text" name="genero" id="genero" value="<?php echo htmlspecialchars($pet['genero']);?>" required>
+                </div>
 
-        <label for="peso">Peso(kg): </label>
-        <input type="number" name="peso" id="peso" value="<?php echo htmlspecialchars($pet['peso']);?>" required>
+                <div class="input-group">
+                    <label for="peso">Peso (kg)</label>
+                    <input type="number" name="peso" id="peso" value="<?php echo htmlspecialchars($pet['peso']);?>" required>
+                </div>
 
-        <label for="idade">Idade aproximada(anos): </label>
-        <input type="number" name="idade" id="idade" value="<?php echo htmlspecialchars($pet['idade']);?>" required>
+                <div class="input-group">
+                    <label for="idade">Idade aproximada (anos)</label>
+                    <input type="number" name="idade" id="idade" value="<?php echo htmlspecialchars($pet['idade']);?>" required>
+                </div>
 
-        <label for="especie">Espécie: </label>
-        <input type="text" name="especie" id="especie" value="<?php echo htmlspecialchars($pet['especie']);?>" required>
+                <div class="input-group">
+                    <label for="especie">Espécie</label>
+                    <input type="text" name="especie" id="especie" value="<?php echo htmlspecialchars($pet['especie']);?>" required>
+                </div>
+            </div>
 
-        <label for="porte">Porte: </label>
-        <input type="text" name="porte" id="porte" value="<?php echo htmlspecialchars($pet['porte']);?>" required>
+            <!-- Segunda Coluna -->
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="porte">Porte</label>
+                    <input type="text" name="porte" id="porte" value="<?php echo htmlspecialchars($pet['porte']);?>" required>
+                </div>
 
-        <label for="raca">Raça: </label>
-        <input type="text" name="raca" id="raca" value="<?php echo htmlspecialchars($pet['raca']);?>" required>
+                <div class="input-group">
+                    <label for="raca">Raça</label>
+                    <input type="text" name="raca" id="raca" value="<?php echo htmlspecialchars($pet['raca']);?>" required>
+                </div>
 
-        <label for="local">Local: </label>
-        <input type="text" name="local" id="local" value="<?php echo htmlspecialchars($pet['local']);?>" required>
+                <div class="input-group">
+                    <label for="local">Localização</label>
+                    <input type="text" name="local" id="local" value="<?php echo htmlspecialchars($pet['local']);?>" required>
+                </div>
 
-        <label for="sobrePet">Sobre o Pet: </label>
-        <input type="text" name="sobrePet" id="sobrePet" value="<?php echo htmlspecialchars($pet['sobrePet']);?>" required>
+                <div class="input-group">
+                    <label for="foto">Foto do Pet</label>
+                    <input type="text" name="foto" id="foto" value="<?php echo htmlspecialchars($pet['foto']);?>" required>
+                </div>
+            </div>
 
-        <label for="foto">Atualize a foto: </label>
-        <input type="text" name="foto" id="foto" value="<?php echo htmlspecialchars($pet['foto']);?>" required>
+            <!-- Seção que ocupa as duas colunas -->
+            <div class="form-section">
+                <div class="input-group">
+                    <label for="sobrePet">Sobre o Pet</label>
+                    <input type="text" name="sobrePet" id="sobrePet" value="<?php echo htmlspecialchars($pet['sobrePet']);?>" required>
+                </div>
 
-        <input type="submit" value="Atualizar">
-    </form>
-    <a href="consulta.php">Voltar</a>
+                <input type="submit" value="Atualizar Informações">
+            </div>
+        </form>
+        <a href="consulta.php" class="voltar-link">Voltar</a>
+    </main>
 </body>
 </html>

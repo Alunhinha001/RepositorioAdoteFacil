@@ -442,10 +442,8 @@ main {
 }
 
 @media (max-width: 480px) {
-  .vitrine,
-  .opcoes-comunidade {
+  .vitrine {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .conteudo,
@@ -454,8 +452,8 @@ main {
     padding: 30px !important;
   }
 
-  .opcao {
-    width: 100%;
-    margin: 0 auto;
+  .opcao{
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }
