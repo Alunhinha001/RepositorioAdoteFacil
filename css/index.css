@@ -257,10 +257,9 @@ main {
 }
 
 .saiba {
-  padding: 8px;
+  padding:10px;
   margin-top: 10px;
   border: none;
-  border-radius: 5px;
   background-color: lightsteelblue;
   font-size: 1.1rem;
   font-weight: bold;
