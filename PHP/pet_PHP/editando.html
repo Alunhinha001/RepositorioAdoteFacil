@@ -134,10 +134,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="text" name="sobrePet" id="sobrePet" value="<?php echo htmlspecialchars($pet['sobrePet']);?>" required>
                 </div>
 
-                <input type="submit" value="Atualizar Informações">
+                <div class="form-actions">
+                    <input type="submit" value="Atualizar Informações">
+                    <a href="consulta.php" class="voltar-link">Voltar</a>
+                </div>
             </div>
         </form>
-        <a href="consulta.php" class="voltar-link">Voltar</a>
     </main>
 </body>
 </html>
