@@ -31,7 +31,7 @@ body {
 }
 
 h1 {
-  color: var(--roxo);
+  color: #355c7d;
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   margin-bottom: 25px;
@@ -40,9 +40,9 @@ h1 {
 
 form {
   background-color: #fff;
-  border: 2px solid var(--azul-principal);
+  border: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   padding: 40px;
   width: 100%;
   max-width: 1000px;
@@ -107,7 +107,7 @@ input:focus {
 }
 
 input[type="submit"] {
-  background-color: var(--azul-principal);
+  background-color:  #355c7d;
   color: white;
   border: none;
   padding: 14px 30px;
@@ -118,12 +118,12 @@ input[type="submit"] {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 20px;
-  width: 200px;
+  width: 400px;
   align-self: center;
 }
 
 input[type="submit"]:hover {
-  background-color: var(--azul-hover);
+  background-color: #2d4d66;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
