@@ -11,11 +11,12 @@
   background-color: #7a8ccb;
 }
 h1, h2, h3, h4 {
-    color: #355c7d; /* Azul escuro suave */
+    color: #4169e1;
     margin-bottom: 15px;
 }
 
 h1 {
+    color: #4169e1;
     font-size: 2.5rem;
     margin-bottom: 30px;
     text-align: center;
@@ -54,7 +55,7 @@ ul li {
 
 .titulo-ajuda h1 {
   font-size: 2.8rem;
-  color: #355c7d; /* azul principal da paleta */
+  color: #4169e1; /* azul principal da paleta */
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -62,7 +63,7 @@ ul li {
 .linha-decorativa {
   width: 100px;
   height: 4px;
-  background-color: #355c7d;
+  background-color: #4169e1;;
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -72,11 +73,11 @@ ul li {
   justify-content: center;
   align-items: center; 
   height: 10vh; 
-  margin-bottom: 150px; 
+  margin-bottom: 15px; 
   text-align: center;
 }
 
-#call-to-action h2 {
+#call-to-action  {
   font-size: 2.5rem;
   font-weight: 700;
   color: #355c7d; /* azul da paleta */

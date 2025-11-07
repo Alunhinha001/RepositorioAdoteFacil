@@ -121,6 +121,9 @@ main {
 
 /* === SEÇÃO COMUNIDADE === */
 .comunidade {
+  position: relative;
+  flex-direction: column;
+  justify-content: flex-start;
   background-color: #af96dd;
   padding: 40px 20px;
   color: rgb(255, 255, 255);
@@ -143,10 +146,10 @@ main {
 
 /* === OPÇÕES DA COMUNIDADE === */
 .opcoes-comunidade {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
+  padding: 20px;
 }
 
 .opcao {
@@ -154,13 +157,12 @@ main {
   border-radius: 20px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  width: 250px;
   text-align: center;
   color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .opcao h2 {
@@ -212,6 +214,8 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 .pet-card {
@@ -257,10 +261,9 @@ main {
 }
 
 .saiba {
-  padding: 8px;
+  padding:10px;
   margin-top: 10px;
   border: none;
-  border-radius: 5px;
   background-color: lightsteelblue;
   font-size: 1.1rem;
   font-weight: bold;
@@ -370,9 +373,11 @@ main {
     margin-bottom: 20px;
   }
 
-  .vitrine {
+  .vitrine,
+  .opcoes-comunidade {
     padding: 10px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
   .carrossel {
@@ -383,8 +388,15 @@ main {
     margin: 20px 0;
   }
 
-  .opcao{
-    flex-wrap: wrap;
+  .opcao {
+    width: 100%;
+    margin: 0;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+  }
+
+  .opcao:hover {
+    transform: scale(1.02);
   }
 
   .slide {
