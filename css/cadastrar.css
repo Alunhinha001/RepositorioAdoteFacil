@@ -63,7 +63,7 @@ p {
   margin-bottom: 16px;
 }
 
-button {
+button, .botao-salvar {
   background-color: #355c7d;
   color: white;
   font-size: 1rem;
