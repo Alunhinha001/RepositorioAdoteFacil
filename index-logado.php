@@ -24,42 +24,42 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-              <a href="index-logado.php"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
-            </div>
+          <div class="nav-left">
+            <a class="logo" href="index-logado.php">
+              <img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" />
+            </a>
+          </div>
 
-            <div class="dropdown">
-                <input type="checkbox" id="burger-menu">
-                <label class="burger" for="burger-menu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </label>
+          <div class="nav-center">
+            <ul class="nav-links">
+              <li><a href="index-logado.php">Início</a></li>
+              <li><a href="sobre.html">Sobre Nós</a></li>
+              <li><a href="adote.php">Adote um pet</a></li>
+              <li><a href="comoajudar.html">Como ajudar</a></li>
+            </ul>
+          </div>
 
-                <div class="dropdown-content">
-                  <a href="index-logado.php" id="inicio">Início</a>
-                  <a href="sobre.html">Sobre Nós</a>
-                  <a href="adote.php">Adote um pet</a>
-                  <a href="comoajudar.html">Como ajudar</a>
+          <div class="perfil-menu">
+              <button class="hamburguer-btn" aria-label="Abrir menu do usuário">
+                ☰
+              </button>
 
-                  <!-- Perfil do usuário -->
-                  <div class="perfil-menu">
-                    <div class="perfil-bolinha">
-                      <img src="<?= htmlspecialchars($fotoPerfil) ?>" alt="Perfil">
-                    </div>
-                    <div class="perfil-dropdown">
-                      <a href="cadastrar-animal.php">Cadastrar novo animal</a>
-                      <a href="perfil.php">Meu perfil / animais</a>
-                      <a href="favoritos.php">Meus favoritos</a>
-                      <a href="editar-perfil.php">Editar perfil</a>
-                      <a href="alterar-senha.php">Alterar senha</a>
-                      <a href="PHP/logout.php">Sair</a>
-                    </div>
-                  </div>
+              <div class="perfil-dropdown">
+                <div class="perfil-header">
+                  <img src="<?= !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'images/user-icon.png' ?>" alt="Foto do usuário" class="perfil-img">
+                  <span class="perfil-nome"><?= htmlspecialchars($_SESSION['nomeUsuario'] ?? 'Usuário') ?></span>
                 </div>
+
+                <a href="cadastrar-animal.php">Cadastrar novo animal</a>
+                <a href="perfil.php">Meu perfil / animais</a>
+                <a href="favoritos.php">Meus favoritos</a>
+                <a href="editar-perfil.php">Editar perfil</a>
+                <a href="PHP/logout.php" class="logout">Sair</a>
+              </div>
             </div>
+          </div>
         </nav>
-    </header>
+      </header>
 
 
 	<main>
@@ -162,5 +162,20 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
       <p>&copy; 2025 by Peludinhos do Bem. Todos os direitos reservados.</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('click', function(e) {
+      const menu = document.querySelector('.perfil-menu');
+      if (!menu) return;
+
+      if (menu.contains(e.target)) {
+        menu.classList.toggle('open');
+      } else {
+        menu.classList.remove('open');
+      }
+    });
+</script>
+
+
 </body>
 </html>
