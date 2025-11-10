@@ -1,4 +1,5 @@
-<?php
+<!-- 
+/*<?php
 include('conexao.php');
 if(isset($_GET['id'])){
     $id = $_GET['id'];
@@ -37,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "Erro ao atualizar o usuario";
     }
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
