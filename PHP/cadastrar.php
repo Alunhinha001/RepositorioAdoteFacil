@@ -29,7 +29,7 @@ include('conexao.php');
 
 //------------------------------PROCESSANDO IMAGEM-------------------------------------------
 // Pasta onde as imagens serão salvas
-$pastaDestino = "imagensPet/";
+$pastaDestino = "../../images/adote/";
 
 // Cria a pasta se não existir
 if (!file_exists($pastaDestino)) {
