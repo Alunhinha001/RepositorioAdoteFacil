@@ -1,8 +1,8 @@
 <?php
-    $servidor = "localhost:8889";
+    $servidor = "localhost";
     $usuario = "root";
     $senha = "root";
-    $dbname = "adotefacil";
+    $dbname = "cadastropet";
 
     $conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
 

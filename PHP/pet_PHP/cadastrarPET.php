@@ -11,7 +11,7 @@ $idade = $_POST['idade'];
 $especie = $_POST['especie'];
 $porte = $_POST['porte'];
 $raca = $_POST['raca'];
-$localidade = $_POST['localidade'];
+$localidade = $_POST['local'];
 $sobre = $_POST['sobre'];
 
 //------------------------------PROCESSANDO IMAGEM-------------------------------------------
