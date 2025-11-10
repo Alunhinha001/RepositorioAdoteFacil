@@ -1,5 +1,5 @@
 <?php
-    $host = 'localhost';
+    $host = 'localhost:8889';
     $dbname = 'cadastropet';
     $username = 'root';
     $password = 'root';

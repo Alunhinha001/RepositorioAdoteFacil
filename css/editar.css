@@ -10,127 +10,116 @@
   --cinza-claro: #f8f9fa;
   --cinza-medio: #ccc;
   --cinza-escuro: #444;
-  --cinza-rodape: #777;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
+/* ======== CONTAINER PRINCIPAL ======== */
 body {
-  font-family: 'Wix Madefor Text', sans-serif;
-  background-color:#fff;
+  background-color: #fff;
   color: var(--cinza-escuro);
+  font-family: 'Wix Madefor Text', sans-serif;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+<<<<<<< Updated upstream
   padding: calc(var(--header-height) + 20px) 20px 40px;
   min-height: 100vh;
+=======
+  padding: 120px 20px 60px; /* espaço pro header fixo */
+>>>>>>> Stashed changes
 }
 
+/* ======== TÍTULO ======== */
 h1 {
+<<<<<<< Updated upstream
   color:#355c7d;
+=======
+>>>>>>> Stashed changes
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
-  margin-bottom: 25px;
+  color: #355c7d;
   text-align: center;
+  margin-bottom: 30px;
 }
 
+/* ======== FORMULÁRIO ======== */
 form {
   background-color: #fff;
-  border: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  padding: 40px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 35px;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-.form-section {
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.form-section:last-child {
-  grid-column: span 2;
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 label {
   font-weight: 600;
   color: var(--cinza-escuro);
-  font-size: 0.95rem;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 10px;
 }
 
 input[type="text"],
 input[type="number"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
   padding: 12px;
   border: 1.5px solid var(--cinza-medio);
   border-radius: 8px;
   outline: none;
-  transition: all 0.3s ease;
   font-size: 15px;
-  font-family: 'Wix Madefor Text', sans-serif;
   background-color: var(--cinza-claro);
+  transition: all 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+input:focus {
   border-color: var(--azul-principal);
   box-shadow: 0 0 0 3px rgba(151, 162, 255, 0.15);
   background-color: #fff;
 }
 
-input:focus {
-  border-color: var(--azul-principal);
-}
-
-input[type="submit"] {
-  background-color:  #355c7d;
+/* ======== BOTÕES ======== */
+input[type="submit"],
+button[type="submit"] {
+  background-color: #355c7d;
   color: white;
   border: none;
-  padding: 14px 30px;
+  padding: 14px 25px;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-family: 'Poppins', sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
+<<<<<<< Updated upstream
   margin-top: 20px;
   width: 100%;
   align-self: stretch;
+=======
+  align-self: center;
+  margin-top: 15px;
+>>>>>>> Stashed changes
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button[type="submit"]:hover {
   background-color: #2d4d66;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
+/* ======== LINK VOLTAR ======== */
 .voltar-link {
+<<<<<<< Updated upstream
   display: inline-block;
   width: 100%;
   background-color: #355c7d;
@@ -149,27 +138,33 @@ input[type="submit"]:hover {
 
 .voltar-link:hover {
   background-color: #2d4d66;
+=======
+  margin-top: 25px;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--roxo);
+  border: 2px solid var(--roxo);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.voltar-link:hover {
+  background-color: var(--roxo);
+  color: white;
+>>>>>>> Stashed changes
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
-
+/* ======== RESPONSIVO ======== */
 @media (max-width: 768px) {
-  form {
-    grid-template-columns: 1fr;
-    padding: 25px;
-    gap: 20px;
-  }
-
-  .form-section:last-child {
-    grid-column: 1;
-  }
-
   h1 {
     font-size: 1.6rem;
-    margin-top: 20px;
   }
 
+<<<<<<< Updated upstream
   input[type="text"],
   input[type="number"],
   input[type="email"],
@@ -213,10 +208,13 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 480px) {
+=======
+>>>>>>> Stashed changes
   form {
-    padding: 20px;
+    padding: 25px;
   }
 
+<<<<<<< Updated upstream
   h1 {
     font-size: 1.4rem;
   }
@@ -406,5 +404,10 @@ header {
     top: var(--header-height);
     width: 100%;
     border-radius: 0;
+=======
+  input,
+  button {
+    font-size: 0.95rem;
+>>>>>>> Stashed changes
   }
 }
