@@ -26,6 +26,7 @@ main {
   padding: calc(var(--header-height) + 20px) 20px 40px;
   min-height: 100vh;
 }
+<<<<<<< Updated upstream
 
 /* ======== TÍTULO ======== */
 h1 {
@@ -44,121 +45,288 @@ form {
   padding: 35px;
   width: 100%;
   max-width: 800px;
+=======
+/* ======== RESET E BASE ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #333;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  min-height: 100vh;
+}
+
+
+.navbar .logo img {
+  height: 90px;
+  border-radius: 9px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+
+.dropdown-content {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.dropdown-content a:hover {
+  color: #0077b6;
+}
+
+/* ======== FORMULÁRIO ======== */
+main {
+  flex: 1;
+>>>>>>> Stashed changes
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+form h1 {
+  font-size: 1.8em;
+  color: #0077b6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 
-label {
+.input-group label {
   font-weight: 600;
-  color: var(--cinza-escuro);
+  margin-bottom: 5px;
+  color: #444;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"] {
-  padding: 12px;
-  border: 1.5px solid var(--cinza-medio);
-  border-radius: 8px;
+.input-group input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   outline: none;
-  font-size: 15px;
-  background-color: var(--cinza-claro);
-  transition: all 0.3s ease;
+  font-size: 1em;
+  transition: border-color 0.3s;
 }
 
-input:focus {
-  border-color: var(--azul-principal);
-  box-shadow: 0 0 0 3px rgba(151, 162, 255, 0.15);
-  background-color: #fff;
+.input-group input:focus {
+  border-color: #0077b6;
+}
+.peso-idade, .especie-porte, .input-group{
+  display: flex;
 }
 
+.peso, .idade, .especie, .porte{
+  width: 48%;
+  margin: auto;
+}
 /* ======== BOTÕES ======== */
 input[type="submit"],
-button[type="submit"] {
-  background-color: #355c7d;
+button {
+  background-color: #0077b6;
   color: white;
   border: none;
+<<<<<<< Updated upstream
   padding: 14px 25px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
+=======
+  border-radius: 6px;
+  padding: 12px;
+>>>>>>> Stashed changes
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  width: 100%;
-  align-self: stretch;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover,
+<<<<<<< Updated upstream
 button[type="submit"]:hover {
   background-color: #2d4d66;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+=======
+button:hover {
+  background-color: #005f8e;
+}
+/* ======== FORM DELETAR PET ======== */
+form[action="deleter.php"] {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* controla o espaço entre os elementos dentro do form */
+>>>>>>> Stashed changes
 }
 
-/* ======== LINK VOLTAR ======== */
+/* Remove o <br> do layout (não quebra linha) */
+form[action="deleter.php"] br {
+  display: none;
+}
+
+/* Botão "Deletar Pet" */
+form[action="deleter.php"] button {
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+form[action="deleter.php"] button:hover {
+  background-color: #c1121f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
+}
+
+
+/* Link “Voltar” */
 .voltar-link {
   display: inline-block;
-  width: 100%;
-  background-color: #355c7d;
-  color: #ffffff;
+  background-color: #005f8e; /* cor do botão */
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
   text-align: center;
+<<<<<<< Updated upstream
   padding: 14px 0;
   border-radius: 10px;
   border: none;
   margin-top: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   font-family: "Poppins", sans-serif;
+=======
+  border-radius: 8px;
+  margin-top: -15px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+>>>>>>> Stashed changes
 }
 
 .voltar-link:hover {
-  background-color: #2d4d66;
+  background-color: #457b9d; /* cor ao passar o mouse */
   transform: translateY(-2px);
+<<<<<<< Updated upstream
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+=======
+  box-shadow: 0 4px 10px rgba(69, 123, 157, 0.3);
+>>>>>>> Stashed changes
 }
+
 
 /* ======== RESPONSIVO ======== */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.6rem;
+@media (max-width: 480px) {
+  form[action="deleter.php"] {
+    padding: 20px;
   }
 
-  input[type="text"],
-  input[type="number"],
-  input[type="email"],
-  input[type="password"] {
-    font-size: 14px;
-  }
-
-  input[type="submit"] {
+  form[action="deleter.php"] button,
+  form[action="deleter.php"] .voltar-link {
     width: 100%;
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  .input-group {
-    margin-bottom: 5px;
+    max-width: none;
+    font-size: 0.95rem;
   }
 }
 
-.form-actions {
+/* ======== FOOTER ======== */
+footer {
+  background-color: #1d3557;
+  color: #f1faee;
   display: flex;
-  gap: 12px;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 10%;
+}
+
+.footer-coluna {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-coluna h2 {
+  color: #a8dadc;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-coluna p,
+.footer-coluna a {
+  color: #f1faee;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+.footer-coluna a:hover h2 {
+  text-decoration: underline;
+}
+
+.app-link {
   margin-top: 10px;
 }
 
+<<<<<<< Updated upstream
 .form-actions>input[type="submit"],
 .form-actions>.voltar-link {
   flex: 1 1 0;
@@ -193,21 +361,18 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+=======
+.footer-rodape {
+>>>>>>> Stashed changes
   width: 100%;
-  height: var(--header-height);
-  z-index: 1000;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #a8dadc;
+  margin-top: 20px;
+  font-size: 0.85em;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 100%;
-}
-
+<<<<<<< Updated upstream
 .logo {
   display: flex;
   align-items: center;
@@ -218,26 +383,15 @@ header {
   max-width: 200px;
   max-height: 48px;
   height: auto;
+=======
+
+.pet-foto {
+>>>>>>> Stashed changes
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover img {
-  transform: scale(1.02);
-}
-
-/* === NAVEGAÇÃO === */
-.dropdown-content {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.dropdown-content a {
-  background-color: var(--azul-principal);
-  color: white;
-  padding: 12px 20px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
+<<<<<<< Updated upstream
   font-weight: 600;
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
@@ -251,3 +405,31 @@ header {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+=======
+  margin: 15px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .dropdown input:checked ~ .dropdown-content {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
+>>>>>>> Stashed changes
