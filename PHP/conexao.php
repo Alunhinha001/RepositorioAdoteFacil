@@ -1,6 +1,6 @@
 <?php
     $host = 'localhost:8889';
-    $dbname = 'cadastropet';
+    $dbname = 'adotefacil';
     $username = 'root';
     $password = 'root';
 

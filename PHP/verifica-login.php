@@ -37,7 +37,7 @@ if (isset($_POST['bt-entrar'])) {
             }
 
             // Redireciona corretamente
-            header('Location: ../index-logado.php');
+            header('Location: ../index2.php');
             exit();
         } else {
             echo "<script>alert('Usuário ou senha incorretos.'); window.location.href='../entrar.html';</script>";
