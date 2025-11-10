@@ -53,6 +53,9 @@ if ($result) {
         <section class="intro-adote">
             <h1>Encontre seu novo melhor amigo</h1>
             <p>Adotar é um gesto de amor. Veja os pets disponíveis e transforme uma vida.</p>
+            <div class="cadastro-pet-container">
+                <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
+            </div>
         </section>
     <?php if (count($pet) > 0): ?>
     <div class="vitrine">
@@ -82,9 +85,7 @@ if ($result) {
             <p>Nenhum usuario cadastrado.</p>
         <?php endif; ?>
         </div>
-            <div class="cadastro-pet-container">
-                <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
-            </div>
+            
     </main>
    <footer>
     <div class="footer-coluna" id="cl1">
