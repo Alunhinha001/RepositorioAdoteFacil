@@ -1,10 +1,16 @@
 <?php
-include('PHP/conexao.php');//Inclui o arquivo de conexãocom o bd para estabelecer a conexão com o MySQL
-$sql = "SELECT * FROM pet"; //Prepara uma consulta Sql para selecionar as relações
-$consulta = $conn->prepare($sql);
-$consulta->execute();
-$pet = $consulta->fetchAll(PDO::FETCH_ASSOC); //Armazena todos os registros retornados pela consulta em um array associativo
+include('PHP/conexao2.php'); // Supondo que este arquivo já estabelece a conexão mysqli
 
+$sql = "SELECT * FROM pet ORDER BY id_pet DESC";
+$result = mysqli_query($conexao, $sql);
+
+if ($result) {
+    $pet = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    mysqli_free_result($result); // Libera a memória do resultado
+} else {
+    echo "Erro na consulta: " . mysqli_error($conexao);
+    $pet = array(); // Array vazio em caso de erro
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,7 +41,7 @@ $pet = $consulta->fetchAll(PDO::FETCH_ASSOC); //Armazena todos os registros reto
                 <div class="dropdown-content">
                 <a href="index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
-                <a href="adote.html" id="adote">Adote um pet</a>
+                <a href="adote.php" id="adote">Adote um pet</a>
                 <a href="comoajudar.html">Como ajudar</a>
                 <a href="entrar.html">Entrar</a>
                 </div>
@@ -66,267 +72,20 @@ $pet = $consulta->fetchAll(PDO::FETCH_ASSOC); //Armazena todos os registros reto
                     <p><strong>Espécie:</strong> <?php echo $animal['especie']; ?></p>
                     <p><strong>Porte:</strong> <?php echo $animal['porte']; ?></p>
                     <p><strong>Raça:</strong> <?php echo $animal['raca']; ?></p>
-                    <p><strong>Sobre pet:</strong> <?php echo $animal['sobre']; ?></p>
+                    <p><strong>Sobre pet:</strong> <?php echo $animal['sobrePet']; ?></p>
                     <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
                 </div>
                 <button class="saiba">Saber mais</button>
             </div>
-                <?php endforeach; ?>
-
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/capreto.jpg" alt="cachorrinho fofo" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Bolota</h2>
-                    <p><strong>Idade:</strong> 2 anos</p>
-                    <p><strong>Gênero:</strong> Fêmea</p>
-                    <p><strong>Local:</strong> Timbiras - MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 5.4 kg</p>
-                    <p><strong>Espécie:</strong> cachorro</p>
-                    <p><strong>Porte:</strong> pequeno</p>
-                    <p><strong>Raça:</strong> salsichonês selvagem</p>
-                    <p><strong>Sobre pet:</strong> Especialista em cochilos longos, mestre em receber carinho e viciada em biscoitos.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                <button class="saiba">Saber mais</button>
-            </div>
-
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/golden.jpg" alt="cachorro brincalhão" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Rex Power</h2>
-                    <p><strong>Idade:</strong> 7 meses</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong> Bacabal - MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 12 kg</p>
-                    <p><strong>Espécie:</strong> cachorro</p>
-                    <p><strong>Porte:</strong> médio</p>
-                    <p><strong>Raça:</strong> golden turbo retriever</p>
-                    <p><strong>Sobre pet:</strong> Ama correr, pular em poças e destruir chinelos como forma de arte.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/pet 1.jpg" alt="cachorrinho fofo" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Zé Ninguém</h2>
-                    <p><strong>Idade:</strong> 1 ano e 3 meses</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong> Açailândia - MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 8.7 kg</p>
-                    <p><strong>Espécie:</strong> cachorro</p>
-                    <p><strong>Porte:</strong> médio</p>
-                    <p><strong>Raça:</strong> vira-pureza</p>
-                    <p><strong>Sobre pet:</strong> Gosta de assistir novela com a vó, rolar no tapete e fingir que não ouviu quando chamam.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/pet 3.webp" alt="gatinho fofo" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Tigrinho</h2>
-                    <p><strong>Idade:</strong> 4 meses</p>
-                    <p><strong>Gênero:</strong> Fêmea</p>
-                    <p><strong>Local:</strong> Cidelândia - MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 2 kg</p>
-                    <p><strong>Espécie:</strong> gato</p>
-                    <p><strong>Porte:</strong> mini felino</p>
-                    <p><strong>Raça:</strong> tigrada do cerrado</p>
-                    <p><strong>Sobre pet:</strong> Anda como ninja, derruba tudo da mesa e olha julgando até tua alma.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-            
-                <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/dogg.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Max </h2>
-                    <p><strong>Idade:</strong> 3 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong> São paulo, Brasil</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 27 kg</p>
-                    <p><strong>Espécie:</strong> CAnino</p>
-                    <p><strong>Porte:</strong> Grande</p>
-                    <p><strong>Raça:</strong> Labrador Retriever</p>
-                    <p><strong>Sobre pet:</strong>  Max é um labrdor muito brincalhão e energético, que adora correr no parque e brincar de buscar a bolinha.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-             <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/01.webp" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Mia </h2>
-                    <p><strong>Idade:</strong> 2 anos</p>
-                    <p><strong>Gênero:</strong> Fêmea</p>
-                    <p><strong>Local:</strong> Curitiba, Brasil</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 4 kg</p>
-                    <p><strong>Espécie:</strong> felino</p>
-                    <p><strong>Porte:</strong> Pequeno</p>
-                    <p><strong>Raça:</strong> Siamês</p>
-                    <p><strong>Sobre pet:</strong>  Mia é uma gata muito curiosa e vocal. Adora observar os pássaros da janela e brincar com bolinhas de papel. É muito carinhosa com seus tutores.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/02.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Thor</h2>
-                    <p><strong>Idade:</strong> 5 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong>Belo Horizonte, Brasil</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 5 kg</p>
-                    <p><strong>Espécie:</strong> felino</p>
-                    <p><strong>Porte:</strong> Médio</p>
-                    <p><strong>Raça:</strong>  Maine Coon</p>
-                    <p><strong>Sobre pet:</strong> Thor é um gigante gentil. Apesar do tamanho, é muito dócil e adora um bom colo. Gosta de seguir seus humanos pela casa e é um ótimo companheiro para cochilos.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-             <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/rotwailer.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Rex</h2>
-                    <p><strong>Idade:</strong> 5 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong>Brasília, Brasil</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 40 kg</p>
-                    <p><strong>Espécie:</strong> Canino</p>
-                    <p><strong>Porte:</strong> Grande</p>
-                    <p><strong>Raça:</strong> Rothwell </p>
-                    <p><strong>Sobre pet:</strong> Rex é um cão protetor e muito inteligente. Adora aprender novos comandos e é um excelente cão de guarda. Apesar da aparência imponente, é muito afetuoso com sua família.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-                 <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/03b.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: bob</h2>
-                    <p><strong>Idade:</strong> 4 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong>Brasília, Brasil</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 23 kg</p>
-                    <p><strong>Espécie:</strong> Canino</p>
-                    <p><strong>Porte:</strong> Médio</p>
-                    <p><strong>Raça:</strong> alsicha</p>
-                    <p><strong>Sobre pet:</strong> Bob é um Dachshund com alma de explorador. Apesar das perninhas curtas, ele adora uma aventura e é surpreendentemente ágil para cavar pequenos buracos e investigar cada canto do sítio</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-              <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/Dálmata.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Apollo</h2>
-                    <p><strong>Idade:</strong> 7 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong> Imperatriz-MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 42 kg</p>
-                    <p><strong>Espécie:</strong> Canino</p>
-                    <p><strong>Porte:</strong> Grande</p>
-                    <p><strong>Raça:</strong>  Dálmata </p>
-                    <p><strong>Sobre pet:</strong> Apollo é um dálmata atlético e cheio de energia, com um sorriso contagiante que ilumina qualquer ambiente. Conhecido por sua inteligência e por ser um pouco travesso.</p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/leb.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: Pimentinha</h2>
-                    <p><strong>Idade:</strong> 3 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong> Imperatriz-MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 15 kg</p>
-                    <p><strong>Espécie:</strong> Canino</p>
-                    <p><strong>Porte:</strong> Médio</p>
-                    <p><strong>Raça:</strong> Com traços de Boxer e Vira-lata </p>
-                    <p><strong>Sobre pet:</strong> Pimentinha é um cão cheio de vida e extremamente leal. Ele foi encontrado vagando pelas ruas. </p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-            <div class="pet-card">
-                <div class="pet-imagem">
-                    <img src="images/adote/hoth.jpg" alt="cachorrinho" />
-                </div>
-                <div class="pet-info">
-                    <h2>Nome: hort</h2>
-                    <p><strong>Idade:</strong> 2 anos</p>
-                    <p><strong>Gênero:</strong> Macho</p>
-                    <p><strong>Local:</strong> Imperatriz-MA</p>
-                </div>
-                <div class="sobre">
-                    <p><strong>Peso:</strong> 19 kg</p>
-                    <p><strong>Espécie:</strong> Canino</p>
-                    <p><strong>Porte:</strong> Médio</p>
-                    <p><strong>Raça:</strong> Beagle</p>
-                    <p><strong>Sobre pet:</strong> hort é um cão cheio de energia e muito brincalhão, ideal para tutores que gostam de atividades ao ar livre. </p>
-                    <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
-                </div>
-                    <button class="saiba">Saber mais</button>
-            </div>
-            <?php else: ?>
+        <?php endforeach; ?>
+        <?php else: ?>
             <p>Nenhum usuario cadastrado.</p>
-    <?php endif; ?>
+        <?php endif; ?>
         </div>
             <div class="cadastro-pet-container">
                 <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
             </div>
     </main>
-
-    
    <footer>
     <div class="footer-coluna" id="cl1">
       <h2>Peludinhos do bem</h2>
