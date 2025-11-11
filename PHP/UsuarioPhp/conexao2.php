@@ -2,7 +2,7 @@
     $servidor = "localhost";
     $usuario = "root";
     $senha = "root";
-    $dbname = "cadastrodoador";
+    $dbname = "adotefacil";
 
     $conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
