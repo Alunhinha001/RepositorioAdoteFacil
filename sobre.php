@@ -1,3 +1,32 @@
+<?php
+session_start();
+require_once '../PHP/conexao2.php';
+
+// Verifica se o usuário está logado
+if(!isset($_SESSION['online']) || $_SESSION['online'] !== true){
+    header('Location: entrar.html');
+    exit;
+}
+
+// Recupera o nome do usuário salvo na sessão
+$nomeUsuario = $_SESSION['nomeUsuario'];
+
+// Busca informações privadas do usuário no banco
+$sql = "SELECT * FROM cliente WHERE nome = '$nomeUsuario'";
+$resultado = $conexao->query($sql);
+
+if(mysqli_num_rows($resultado) > 0){
+    $dados = mysqli_fetch_assoc($resultado);
+} else {
+    echo "<script>alert('Usuário não encontrado.');</script>";
+    header('Location: entrar.html');
+    exit;
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

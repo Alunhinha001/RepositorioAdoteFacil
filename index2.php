@@ -37,7 +37,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
 
                 <div class="dropdown-content">
                 <a href="index2.php" id="inicio">Início</a>
-                <a href="sobre.html">Sobre Nós</a>
+                <a href="sobre.php">Sobre Nós</a>
                 <a href="adote.php">Adote um pet</a>
                 <a href="comoajudar.html">Como ajudar</a>
                 <a href="">Meu Perfil</a>

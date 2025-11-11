@@ -45,10 +45,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 8px 10px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -185,14 +184,15 @@ footer {
 .footer-coluna {
     flex: 1 1 250px;
     margin: 10px;
-    max-height: 200px;
+    max-height: 180px;
 }
 #cl2 {
     flex: 1 1 400px;
     margin-inline: 10px;
 }
 #cl3 {
-    flex: 1 1 200px;
+  flex: 1 1 180px;
+  display: flex;
 }
 .footer-coluna h2 {
     font-size: 20px;

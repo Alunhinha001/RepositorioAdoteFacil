@@ -32,7 +32,7 @@
                 </div>
             </div>
         </nav>
-    </header>]
+    </header>
 
     <main>
         <div class="login-container">
