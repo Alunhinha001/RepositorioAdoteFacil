@@ -33,13 +33,14 @@
                     $_SESSION['whatsUsuario'] = $dados['whatsapp'];
                     $_SESSION['estadoUsuario'] = $dados['estado'];
                     $_SESSION['cidadeUsuario'] = $dados['cidade'];
+                    $_SESSION['fotoUsuario'] = $dados['foto'];
                     $_SESSION['idUsuario'] = $dados['id'];
                     header('Location: perfil.php');
 
                 else: //caso email ou senha diferente
                     $erro = "Usuário ou senha não conferem.";
                     echo "<script>alert('Usuário ou senha não conferem.');</script>";
-                    header('Location: ../entrar.html');
+                    header('Location: ../../entrar.html');
                     echo $erro; // garante que a mensagem de erro seja exibida
                 endif;
             else:

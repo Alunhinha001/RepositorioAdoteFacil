@@ -34,7 +34,7 @@
   </header>
 
   <div class="box">
-    <form action="PHP/cadastrar.php" method="post">
+    <form action="PHP/UsuarioPhp/cadastrar.php" method="post" enctype="multipart/form-data">
       <fieldset>
         <legend><b>Cadastre-se</b></legend>
 
@@ -116,6 +116,11 @@
         <div class="inputBox">
           <label for="Csenha" class="labelinput">Confirme sua Senha</label>
           <input type="password" name="Csenha" id="Csenha" class="inputUser" required>
+        </div>
+
+        <div class="inputBox">
+          <label for="foto" class="labelinput">Foto de Perfil</label>
+          <input type="file" name="foto" id="foto" accept="imagem/*" required>
         </div>
 
         <input type="submit" value="Enviar" class="botao-salvar">

@@ -8,7 +8,5 @@
 
     if (!$conexao) {
         die("Conexão não realizada, erro: ".mysqli_connect_error());
-    }else {
-        echo "Conexão realizada com sucesso!";
     }
 ?>
