@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// Se o usuário não estiver logado, volta para o index normal
+if (!isset($_SESSION['online']) || $_SESSION['online'] !== true) {
+  header('Location: index.html');
+  exit();
+}
+
+// Define a imagem do perfil
+$caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'images/user-icon.png';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,7 +25,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-              <a href="index.html"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+              <a href="index2.php"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
             </div>
             <div class="dropdown">
                 <input type="checkbox" id="burger-menu">
@@ -24,12 +36,11 @@
                 </label>
 
                 <div class="dropdown-content">
-                <a href="index.html" id="inicio">Início</a>
+                <a href="index2.php" id="inicio">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="adote.php">Adote um pet</a>
                 <a href="comoajudar.html">Como ajudar</a>
-                <a href="entrar.html">Entrar</a>
-                <a href="PHP/perfil.php">perfil</a>
+                <a href="">Meu Perfil</a>
                 </div>
             </div>
         </nav>
@@ -116,7 +127,7 @@
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -136,7 +147,7 @@
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -156,7 +167,7 @@
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -176,7 +187,7 @@
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>

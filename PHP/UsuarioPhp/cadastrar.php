@@ -32,36 +32,36 @@ include "conexao2.php";
 
 include('conexao.php');
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $genero = $_POST['genero'];
-    $peso = $_POST['peso'];
-    $idade = $_POST['idade'];
-    $especie = $_POST['especie'];
-    $porte = $_POST['porte'];
-    $raca = $_POST['raca'];
-    $localidade = $_POST['local'];
-    $sobre = $_POST['sobre'];
+//------------------------------PROCESSANDO IMAGEM-------------------------------------------
+// Pasta onde as imagens serão salvas
+$pastaDestino = "../../images/adote/";
 
-    
-    if (isset($_FILES['foto']) && $_FILES['foto']['error'] == 0) {
-        $pasta = "imagensPet/";
-        if (!is_dir($pasta)) {
-            mkdir($pasta, 0777, true);
-        }
+// Cria a pasta se não existir
+if (!file_exists($pastaDestino)) {
+    mkdir($pastaDestino, 0755, true);
+}
 
-        $nomeFoto = uniqid() . "-" . basename($_FILES["foto"]["name"]);
-        $caminhoFoto = $pasta . $nomeFoto;
+$mensagem = "";
+$caminhoImagem = "";
 
-        if (move_uploaded_file($_FILES["foto"]["tmp_name"], $caminhoFoto)) {
-            $foto = $caminhoFoto;
-        } else {
-            echo "Erro ao fazer upload da foto.";
-            exit;
-        }
-    } else {
-        $foto = null;
-    } 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Gera nome único para a imagem
+    $nomeImagem = uniqid() . "_" . basename($_FILES["foto"]["name"]);
+    $caminhoFinal = $pastaDestino . $nomeImagem;
+    $tipoImagem = strtolower(pathinfo($caminhoFinal, PATHINFO_EXTENSION));
+
+    // Verifica se é uma imagem válida
+    $verificacao = getimagesize($_FILES["foto"]["tmp_name"]);
+    if ($verificacao === false) {
+        $mensagem = "O arquivo enviado não é uma imagem.";
+    } elseif ($_FILES["foto"]["size"] > 2 * 1024 * 1024) {
+        $mensagem = "A imagem é muito grande (máx. 2MB).";
+    } elseif (!in_array($tipoImagem, ["jpg", "jpeg", "png", "gif"])) {
+        $mensagem = "Apenas arquivos JPG, JPEG, PNG e GIF são permitidos.";
+    } elseif (move_uploaded_file($_FILES["foto"]["tmp_name"], $caminhoFinal)) {
+        $mensagem = "Upload realizado com sucesso!";
+        $caminhoImagem = $caminhoFinal; }
+//---------------------FIM PROCESSO IMAGEM---------------------------------------------------------------------------------------
 
     try {
         $sql = "INSERT INTO pet 

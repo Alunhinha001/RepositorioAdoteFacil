@@ -46,7 +46,7 @@
             else:
                 $erro = "Usuário não encontrado.";
                 echo "<script>alert('usuário não encontrado.');</script>"; // Imprime uma alert na tela utilizando script
-                header('Location: ../entrar.html');
+                header('Location: ../../entrar.html');
                 echo $erro; //garante que a mensagem de erro seja exibida
             endif;
         endif;

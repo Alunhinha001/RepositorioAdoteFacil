@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Wix+Madefor+Text:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Wix+Madefor+Text:wght@400;600&display=swap");
 
 :root {
   --roxo: #4b0082;
@@ -10,211 +10,344 @@
   --cinza-claro: #f8f9fa;
   --cinza-medio: #ccc;
   --cinza-escuro: #444;
-  --cinza-rodape: #777;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
+/* ======== CONTAINER PRINCIPAL ======== */
 body {
-  font-family: 'Wix Madefor Text', sans-serif;
-  background-color:#fff;
+  background-color: #fff;
   color: var(--cinza-escuro);
+  font-family: "Wix Madefor Text", sans-serif;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: calc(var(--header-height) + 20px) 20px 40px;
   min-height: 100vh;
 }
+<<<<<<< Updated upstream
 
+/* ======== TÍTULO ======== */
 h1 {
-  color:#355c7d;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2rem;
-  margin-bottom: 25px;
+  color: #355c7d;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ======== FORMULÁRIO ======== */
+form {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+  width: 100%;
+  max-width: 800px;
+=======
+/* ======== RESET E BASE ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.navbar .logo img {
+  height: 90px;
+  border-radius: 9px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+
+.dropdown-content {
+  display: flex;
+  gap: 20px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.dropdown-content a:hover {
+  color: #0077b6;
+}
+
+/* ======== FORMULÁRIO ======== */
+main {
+  flex: 1;
+>>>>>>> Stashed changes
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
 }
 
 form {
   background-color: #fff;
-  border: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 30px;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  max-width: 600px;
+  margin-bottom: 25px;
+}
+
+form h1 {
+  font-size: 1.8em;
+  color: #0077b6;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-section {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-}
-
-.form-section:last-child {
-  grid-column: span 2;
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-label {
-  font-weight: 600;
-  color: var(--cinza-escuro);
-  font-size: 0.95rem;
+  gap: 20px;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border: 1.5px solid var(--cinza-medio);
-  border-radius: 8px;
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.input-group input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   outline: none;
-  transition: all 0.3s ease;
-  font-size: 15px;
-  font-family: 'Wix Madefor Text', sans-serif;
-  background-color: var(--cinza-claro);
+  font-size: 1em;
+  transition: border-color 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: var(--azul-principal);
-  box-shadow: 0 0 0 3px rgba(151, 162, 255, 0.15);
-  background-color: #fff;
+.input-group input:focus {
+  border-color: #0077b6;
+}
+.peso-idade, .especie-porte, .input-group{
+  display: flex;
 }
 
-input:focus {
-  border-color: var(--azul-principal);
+.peso, .idade, .especie, .porte{
+  width: 48%;
+  margin: auto;
 }
-
-input[type="submit"] {
-  background-color:  #355c7d;
+/* ======== BOTÕES ======== */
+input[type="submit"],
+button {
+  background-color: #0077b6;
   color: white;
   border: none;
-  padding: 14px 30px;
+<<<<<<< Updated upstream
+  padding: 14px 25px;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+=======
+  border-radius: 6px;
+  padding: 12px;
+>>>>>>> Stashed changes
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  width: 100%;
-  align-self: stretch;
+  font-weight: 600;
+  transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+<<<<<<< Updated upstream
+button[type="submit"]:hover {
   background-color: #2d4d66;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+=======
+button:hover {
+  background-color: #005f8e;
+}
+/* ======== FORM DELETAR PET ======== */
+form[action="deleter.php"] {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  max-width: 600px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* controla o espaço entre os elementos dentro do form */
+>>>>>>> Stashed changes
+}
+
+/* Remove o <br> do layout (não quebra linha) */
+form[action="deleter.php"] br {
+  display: none;
+}
+
+/* Botão "Deletar Pet" */
+form[action="deleter.php"] button {
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+form[action="deleter.php"] button:hover {
+  background-color: #c1121f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(230, 57, 70, 0.3);
 }
 
 
+/* Link “Voltar” */
 .voltar-link {
   display: inline-block;
-  width: 100%;
-  background-color: #355c7d;
-  color: #ffffff;
+  background-color: #005f8e; /* cor do botão */
+  color: #fff;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
   text-align: center;
+<<<<<<< Updated upstream
   padding: 14px 0;
   border-radius: 10px;
   border: none;
   margin-top: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+=======
+  border-radius: 8px;
+  margin-top: -15px;
+  padding: 10px 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+>>>>>>> Stashed changes
 }
 
 .voltar-link:hover {
-  background-color: #2d4d66;
+  background-color: #457b9d; /* cor ao passar o mouse */
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+<<<<<<< Updated upstream
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+=======
+  box-shadow: 0 4px 10px rgba(69, 123, 157, 0.3);
+>>>>>>> Stashed changes
 }
 
 
-@media (max-width: 768px) {
-  form {
-    grid-template-columns: 1fr;
-    padding: 25px;
-    gap: 20px;
+/* ======== RESPONSIVO ======== */
+@media (max-width: 480px) {
+  form[action="deleter.php"] {
+    padding: 20px;
   }
 
-  .form-section:last-child {
-    grid-column: 1;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-    margin-top: 20px;
-  }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="email"],
-  input[type="password"] {
-    font-size: 14px;
-  }
-
-  input[type="submit"] {
+  form[action="deleter.php"] button,
+  form[action="deleter.php"] .voltar-link {
     width: 100%;
-    font-size: 1rem;
-    padding: 12px;
-  }
-
-  .input-group {
-    margin-bottom: 5px;
+    max-width: none;
+    font-size: 0.95rem;
   }
 }
 
-.form-actions {
+/* ======== FOOTER ======== */
+footer {
+  background-color: #1d3557;
+  color: #f1faee;
   display: flex;
-  gap: 12px;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 10%;
+}
+
+.footer-coluna {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-coluna h2 {
+  color: #a8dadc;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-coluna p,
+.footer-coluna a {
+  color: #f1faee;
+  font-size: 0.9em;
+  text-decoration: none;
+}
+
+.footer-coluna a:hover h2 {
+  text-decoration: underline;
+}
+
+.app-link {
   margin-top: 10px;
 }
 
-.form-actions > input[type="submit"],
-.form-actions > .voltar-link {
+<<<<<<< Updated upstream
+.form-actions>input[type="submit"],
+.form-actions>.voltar-link {
   flex: 1 1 0;
   width: auto;
-  margin-top: 0; 
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {
   .form-actions {
     flex-direction: column;
   }
-  .form-actions > input[type="submit"],
-  .form-actions > .voltar-link {
+
+  .form-actions>input[type="submit"],
+  .form-actions>.voltar-link {
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   form {
-    padding: 20px;
+    padding: 25px;
   }
 
   h1 {
@@ -228,22 +361,18 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+=======
+.footer-rodape {
+>>>>>>> Stashed changes
   width: 100%;
-  height: var(--header-height);
-  z-index: 1000;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #a8dadc;
+  margin-top: 20px;
+  font-size: 0.85em;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 100%;
-}
-
-
+<<<<<<< Updated upstream
 .logo {
   display: flex;
   align-items: center;
@@ -254,29 +383,18 @@ header {
   max-width: 200px;
   max-height: 48px;
   height: auto;
+=======
+
+.pet-foto {
+>>>>>>> Stashed changes
   display: block;
-  transition: transform 0.3s ease;
-}
-
-.logo:hover img {
-  transform: scale(1.02);
-}
-
-/* === NAVEGAÇÃO === */
-.dropdown-content {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.dropdown-content a {
-  background-color: var(--azul-principal);
-  color: white;
-  padding: 12px 20px;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
+<<<<<<< Updated upstream
   font-weight: 600;
   font-size: 0.95rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   text-decoration: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -287,124 +405,31 @@ header {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
-
-.burger {
-  position: relative;
-  width: 35px;
-  height: 25px;
-  background: transparent;
-  cursor: pointer;
-  display: none;
-  z-index: 11;
-  border: none;
-  padding: 0;
-}
-
-#burger-menu {
-  display: none;
-}
-
-.burger span {
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: var(--cinza-escuro);
-  border-radius: 6px;
-  left: 0;
-  transition: 0.3s ease-in-out;
-}
-
-.burger span:nth-child(1) {
-  top: 0;
-}
-
-.burger span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.burger span:nth-child(3) {
-  bottom: 0;
-}
-
-#burger-menu:checked + .burger span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 11px;
-}
-
-#burger-menu:checked + .burger span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-20px);
-}
-
-#burger-menu:checked + .burger span:nth-child(3) {
-  transform: rotate(-45deg);
-  bottom: 11px;
+=======
+  margin: 15px auto;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 
-@media (max-width: 900px) {
-  /* reduce header height on smaller screens */
-  :root {
-    --header-height: 64px;
-  }
-  .burger {
-    display: block;
-  }
-
-  .navbar {
-    padding: 0 15px;
-    height: var(--header-height);
-  }
-
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 768px) {
   .dropdown-content {
-    position: fixed;
-    top: var(--header-height);
-    right: 0;
-    width: 250px;
-    background: var(--roxo-claro);
-    flex-direction: column;
-    padding: 20px;
-    gap: 12px;
     display: none;
-    border-radius: 0 0 0 15px;
-    box-shadow: -2px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
-  #burger-menu:checked ~ .dropdown-content {
+  .dropdown input:checked ~ .dropdown-content {
     display: flex;
-    transform: translateX(0);
   }
 
-  .dropdown-content a {
-    width: 100%;
-    background: var(--azul-principal);
-    color: white;
-    text-align: center;
-    padding: 14px;
-  }
-
-  .dropdown-content a:hover {
-    transform: scale(1.02);
-    background: var(--azul-hover);
+  .burger {
+    display: flex;
   }
 }
-
-@media (max-width: 480px) {
-  .logo img {
-    width: 130px;
-  }
-
-  .navbar {
-    padding: 0 12px;
-    height: var(--header-height);
-  }
-
-  .dropdown-content {
-    top: var(--header-height);
-    width: 100%;
-    border-radius: 0;
-  }
-}
+>>>>>>> Stashed changes
