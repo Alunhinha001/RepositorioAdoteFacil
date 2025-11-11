@@ -36,7 +36,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </label>
 
                 <div class="dropdown-content">
-                <a href="index.html" id="inicio">Início</a>
+                <a href="index2.php" id="inicio">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="adote.php">Adote um pet</a>
                 <a href="comoajudar.html">Como ajudar</a>
@@ -127,7 +127,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -147,7 +147,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="adote.php"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -167,7 +167,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="adote.php"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -187,7 +187,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href="adote.php"><button class="qadot">Quero adotar</button></a>
+                        <a href=""><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
