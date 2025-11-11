@@ -11,7 +11,7 @@ if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
 $id_usuario = $_SESSION['idUsuario'];
 
 // Busca os dados atualizados do banco
-$sql = "SELECT * FROM cliente WHERE id = '$id_usuario'";
+$sql = "SELECT * FROM cliente WHERE id_cliente = '$id_usuario'";
 $result = mysqli_query($conexao, $sql);
 
 if (!$result || mysqli_num_rows($result) === 0) {

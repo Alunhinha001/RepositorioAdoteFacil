@@ -34,7 +34,7 @@
                     $_SESSION['estadoUsuario'] = $dados['estado'];
                     $_SESSION['cidadeUsuario'] = $dados['cidade'];
                     $_SESSION['fotoUsuario'] = $dados['foto'];
-                    $_SESSION['idUsuario'] = $dados['id'];
+                    $_SESSION['idUsuario'] = $dados['id_cliente'];
                     header('Location: perfil.php');
 
                 else: //caso email ou senha diferente

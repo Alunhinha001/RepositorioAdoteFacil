@@ -6,7 +6,7 @@ if (isset($_SESSION['idUsuario'])) {
     $id = $_SESSION['idUsuario'];
 
     // Usa mysqli (não PDO)
-    $sql = "DELETE FROM cliente WHERE id = ?";
+    $sql = "DELETE FROM cliente WHERE id_cliente = ?";
     $stmt = mysqli_prepare($conexao, $sql);
     mysqli_stmt_bind_param($stmt, "i", $id);
 
