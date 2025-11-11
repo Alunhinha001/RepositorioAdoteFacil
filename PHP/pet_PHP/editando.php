@@ -1,3 +1,5 @@
+
+<!--
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -63,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
+-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -112,26 +114,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="genero">Gênero</label>
                 <input type="text" name="genero" id="genero" value="<?php echo htmlspecialchars($pet['genero']); ?>" required>
             </div>
+            <div class="peso-idade">
+                <div class="input-group peso">
+                    <label for="peso">Peso (kg)</label>
+                    <input type="number" name="peso" id="peso" value="<?php echo htmlspecialchars($pet['peso']); ?>" required>
+                </div>
 
-            <div class="input-group">
-                <label for="peso">Peso (kg)</label>
-                <input type="number" name="peso" id="peso" value="<?php echo htmlspecialchars($pet['peso']); ?>" required>
-            </div>
+                <div class="input-group idade">
+                    <label for="idade">Idade aproximada (anos)</label>
+                    <input type="number" name="idade" id="idade" value="<?php echo htmlspecialchars($pet['idade']); ?>" required>
+                </div>
+            </div>                
+            
+            <div class="especie-porte">
+                <div class="input-group especie">
+                    <label for="especie">Espécie</label>
+                    <input type="text" name="especie" id="especie" value="<?php echo htmlspecialchars($pet['especie']); ?>" required>
+                </div>
 
-            <div class="input-group">
-                <label for="idade">Idade aproximada (anos)</label>
-                <input type="number" name="idade" id="idade" value="<?php echo htmlspecialchars($pet['idade']); ?>" required>
+                <div class="input-group porte">
+                    <label for="porte">Porte</label>
+                    <input type="text" name="porte" id="porte" value="<?php echo htmlspecialchars($pet['porte']); ?>" required>
+                </div>
             </div>
-
-            <div class="input-group">
-                <label for="especie">Espécie</label>
-                <input type="text" name="especie" id="especie" value="<?php echo htmlspecialchars($pet['especie']); ?>" required>
-            </div>
-
-            <div class="input-group">
-                <label for="porte">Porte</label>
-                <input type="text" name="porte" id="porte" value="<?php echo htmlspecialchars($pet['porte']); ?>" required>
-            </div>
+            
 
             <div class="input-group">
                 <label for="raca">Raça</label>
@@ -154,15 +160,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
             <input type="submit" value="Atualizar Informações">
+            <input type="hidden" name="id" value="<?php echo $pet['id']; ?>">
+        <button type="submit">Deletar Pet</button>
+        <br>
+        <a href="consulta.php" class="voltar-link">Voltar</a>
         </div>
     </form>
-
-    <form action="deleter.php" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir este pet?');">
-        <input type="hidden" name="id" value="<?php echo $pet['id']; ?>">
-        <button type="submit">Deletar Pet</button>
-    </form>
-
-    <a href="consulta.php" class="voltar-link">Voltar</a>
 </main>
 
 <footer>
