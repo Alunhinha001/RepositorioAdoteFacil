@@ -1,12 +1,12 @@
 <?php
-include('conexao2.php');
 session_start();
+include('conexao2.php');
 
 if (isset($_SESSION['idUsuario'])) {
     $id = $_SESSION['idUsuario'];
 
     // Usa mysqli (não PDO)
-    $sql = "DELETE FROM cliente WHERE id = ?";
+    $sql = "DELETE FROM cliente WHERE id_cliente = ?";
     $stmt = mysqli_prepare($conexao, $sql);
     mysqli_stmt_bind_param($stmt, "i", $id);
 
@@ -14,7 +14,7 @@ if (isset($_SESSION['idUsuario'])) {
         if (mysqli_stmt_affected_rows($stmt) > 0) {
             echo "Usuário excluído com sucesso!";
             session_destroy();
-            header("Location: ../cadastrar.html");
+            header("Location: ../../cadastrar.html");
             exit;
         } else {
             echo "Usuário não encontrado.";

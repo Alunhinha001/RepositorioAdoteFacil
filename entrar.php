@@ -39,7 +39,7 @@
             <h1>Entrar</h1>
             <div class="linha-decorativa"></div>
 
-            <form class="login-form" action="PHP/verifica-login.php" method="POST">
+            <form class="login-form" action="PHP/UsuarioPhp/verifica-login.php" method="POST">
             <label for="email">E-mail</label>
             <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
 
