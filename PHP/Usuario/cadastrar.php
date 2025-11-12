@@ -22,7 +22,7 @@ include "../conexao.php";
     // Verificação
     if (mysqli_query($conexao, $inserirSQL)) {
         echo "Usuário Cadastrado!";
-        header('Location: ../../entrar.html');
+        header('Location: ../../Paginas/entrar.html');
     } else {
         echo "Usuário não cadastrado. Erro: ".mysqli_connect_error($conexao);
     }
