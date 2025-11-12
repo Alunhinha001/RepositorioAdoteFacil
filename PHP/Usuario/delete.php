@@ -14,7 +14,7 @@ if (isset($_SESSION['idUsuario'])) {
         if (mysqli_stmt_affected_rows($stmt) > 0) {
             echo "Usuário excluído com sucesso!";
             session_destroy();
-            header("Location: ../../cadastrar.html");
+            header("Location: ../../Paginas/cadastrar.html");
             exit;
         } else {
             echo "Usuário não encontrado.";
