@@ -21,7 +21,7 @@ if ($result) {
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../CSS/padrao.css" />
   <link rel="stylesheet" href="../CSS/adote.css" />
-  <script src="JS/adote.js" defer></script>
+  <script src="../JS/adote.js" defer></script>
 </head>
 <body>
     <header>
