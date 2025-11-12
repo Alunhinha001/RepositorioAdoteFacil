@@ -1,15 +1,14 @@
 <?php
-    $host = 'localhost:8889';
-    $dbname = 'adotefacil';
-    $username = 'root';
-    $password = 'root';
+    $servidor = "localhost";
+    $usuario = "root";
+    $senha = "root";
+    $dbname = "adotefacil";
 
-    try{
-        $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conexao = mysqli_connect($servidor, $usuario, $senha, $dbname);
 
-        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        //echo "Conexão com o banco de dados realizado com sucesso!";
-    } catch (PDOException $e) {
-        echo 'Erro de conexão: ' . $e->getMessage();
+    if (!$conexao) {
+        die("Conexão não realizada, erro: ".mysqli_connect_error());
+    }else {
+        //echo "Conexão realizada com sucesso!";
     }
 ?>
