@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'conexao2.php'; // ou o caminho correto para seu arquivo de conexão
+include '../conexao.php'; // ou o caminho correto para seu arquivo de conexão
 
 if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
     header('Location: ../../entrar.html');

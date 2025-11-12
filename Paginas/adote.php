@@ -1,5 +1,5 @@
 <?php
-include('PHP/conexao2.php'); // Supondo que este arquivo já estabelece a conexão mysqli
+include('../PHP/conexao.php'); // Supondo que este arquivo já estabelece a conexão mysqli
 
 $sql = "SELECT * FROM pet ORDER BY id_pet DESC";
 $result = mysqli_query($conexao, $sql);
@@ -19,15 +19,15 @@ if ($result) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adote Fácil</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/padrao.css" />
-  <link rel="stylesheet" href="css/adote.css" />
+  <link rel="stylesheet" href="../CSS/padrao.css" />
+  <link rel="stylesheet" href="../CSS/adote.css" />
   <script src="JS/adote.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="index.html"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+                <a href="index.html"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
                 
             </div>
             <div class="dropdown">
@@ -39,7 +39,7 @@ if ($result) {
                 </label>
 
                 <div class="dropdown-content">
-                <a href="index.html">Início</a>
+                <a href="../index.html">Início</a>
                 <a href="sobre.html">Sobre Nós</a>
                 <a href="adote.php" id="adote">Adote um pet</a>
                 <a href="comoajudar.html">Como ajudar</a>
@@ -59,7 +59,7 @@ if ($result) {
         <?php foreach ($pet as $animal): ?>
             <div class="pet-card">
                 <div class="pet-imagem">
-                    <img src="PHP/imagensPet/<?= htmlspecialchars($animal['foto'])?>" alt="cachorrinho fofo" />
+                    <img src="../IMG/adote/<?= htmlspecialchars($animal['foto'])?>" alt="cachorrinho fofo" />
                 </div>
                 <div class="pet-info">
                     <h2>Nome: <?php echo $animal['nome']; ?></h2>

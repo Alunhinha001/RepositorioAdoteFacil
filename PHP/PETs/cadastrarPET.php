@@ -1,5 +1,5 @@
 <?php
-require_once '../conexao2.php';
+require_once '../conexao.php';
 
 // Recebe os dados do formulário
 $nome = $_POST['nome'];
@@ -16,7 +16,7 @@ $sobre = $_POST['sobre'];
 
 //------------------------------PROCESSANDO IMAGEM-------------------------------------------
 // Pasta onde as imagens serão salvas
-$pastaDestino = "../imagensPet/";
+$pastaDestino = "../../IMG/adote/";
 
 // Cria a pasta se não existir
 if (!file_exists($pastaDestino)) {
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 //---------------------FIM PROCESSO IMAGEM---------------------------------------------------------------------------------------
         $sql = "INSERT INTO pet (nome, genero, peso, idade, especie, porte, raca, localidade, sobrePet, foto) VALUES ('$nome', '$genero', '$peso', '$idade', '$especie', '$porte', '$raca', '$localidade', '$sobre', '$caminhoImagem')";
     if (mysqli_query($conexao, $sql)) {
-       // echo "Cadastro realizado com sucesso!";
+       echo "Cadastro realizado com sucesso!";
        header("Location: ../../index.html");
     } else {
         echo "Erro ao cadastrar: " . mysqli_error($conexao);

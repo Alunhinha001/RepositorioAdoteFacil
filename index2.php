@@ -17,8 +17,8 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adote Fácil</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/padrao.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="CSS/padrao.css">
+  <link rel="stylesheet" href="CSS/index.css">
   <script src="JS/index.js" defer></script>
 </head>
 <body>
@@ -37,10 +37,10 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
 
                 <div class="dropdown-content">
                 <a href="index2.php" id="inicio">Início</a>
-                <a href="sobre.html">Sobre Nós</a>
-                <a href="adote.php">Adote um pet</a>
-                <a href="comoajudar.html">Como ajudar</a>
-                <a href="">Meu Perfil</a>
+                <a href="Paginas/sobre.html">Sobre Nós</a>
+                <a href="Paginas/adote.php">Adote um pet</a>
+                <a href="Paginas/comoajudar.html">Como ajudar</a>
+                <a href="PHP/Usuario/perfil.php">Meu Perfil</a>
                 </div>
             </div>
         </nav>
@@ -51,7 +51,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
 		<section class="carrossel">
             <div class="slides-container">
                 <div class="slide ativo">
-                <img src="images/index/adocao-de-caes3.jpg" alt="Slide 1">
+                <img src="IMG/index/adocao-de-caes3.jpg" alt="Slide 1">
                 <div class="slide-texto">
                     <h2>Bem-vindo ao Adote Fácil</h2>
                     <p>Transforme a vida de um pet com amor e cuidado.</p>
@@ -59,7 +59,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
                 </div>
                 <div class="slide">
-                <img src="images/index/pexels-photo-141496.jpg" alt="Slide 2">
+                <img src="IMG/index/pexels-photo-141496.jpg" alt="Slide 2">
                 <div class="slide-texto">
                     <h2>Ajude a nossa causa</h2>
                     <p>Doe, compartilhe ou seja voluntário. Toda ajuda importa!</p>
@@ -67,7 +67,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
                 </div>
                 <div class="slide">
-                <img src="images/index/golden.jpg" alt="Slide 3">
+                <img src="IMG/index/golden.jpg" alt="Slide 3">
                 <div class="slide-texto">
                     <h2>Conheça nossos parceiros</h2>
                     <p>Petshops, clínicas e apoiadores que fazem a diferença.</p>
@@ -75,8 +75,8 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
                 </div>
             </div>
-            <img src="images/index/Seta-esquerda.png" alt="" class="seta esquerda">
-            <img src="images/index/setas.png" alt="" class="seta direita">
+            <img src="IMG/index/Seta-esquerda.png" alt="" class="seta esquerda">
+            <img src="IMG/index/setas.png" alt="" class="seta direita">
         </section>
 
 
@@ -113,7 +113,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
 			<div class="vitrine">
 				<div class="pet-card">
                     <div class="pet-imagem">
-                        <img src="images/adote/capreto.jpg" alt="cachorrinho fofo" />
+                        <img src="IMG/adote/capreto.jpg" alt="cachorrinho fofo" />
                     </div>
                     <div class="pet-info">
                         <h2>Nome: thor</h2>
@@ -133,7 +133,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
                 <div class="pet-card">
                     <div class="pet-imagem">
-                        <img src="images/adote/golden.jpg" alt="cachorrinho fofo" />
+                        <img src="IMGadote/golden.jpg" alt="cachorrinho fofo" />
                     </div>
                     <div class="pet-info">
                         <h2>Nome: thor</h2>
@@ -153,7 +153,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
                 <div class="pet-card">
                     <div class="pet-imagem">
-                        <img src="images/adote/gato-siames.jpg" alt="cachorrinho fofo" />
+                        <img src="IMG/adote/gato-siames.jpg" alt="cachorrinho fofo" />
                     </div>
                     <div class="pet-info">
                         <h2>Nome: thor</h2>
@@ -173,7 +173,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
                 <div class="pet-card">
                     <div class="pet-imagem">
-                        <img src="images/adote/pet 4.jpeg" alt="cachorrinho fofo" />
+                        <img src="IMG/adote/pet 4.jpeg" alt="cachorrinho fofo" />
                     </div>
                     <div class="pet-info">
                         <h2>Nome: thor</h2>
@@ -193,7 +193,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                 </div>
 			</div>
             <nav class="vejamais">
-                <a href="adote.php">Veja mais <br><img src="images/index/Seta-cinza.png" alt=""></a>
+                <a href="Paginas/adote.php">Veja mais <br><img src="IMG/index/Seta-cinza.png" alt=""></a>
             </nav>
 		</section>
 

@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao2.php'; // garante que o arquivo seja iniciado primeiro
+    require_once '../conexao.php'; // garante que o arquivo seja iniciado primeiro
     session_start(); //inicia a sessão
 
     if(isset($_POST['bt-entrar'])): //isset = se existir ação do botão bt-entrar

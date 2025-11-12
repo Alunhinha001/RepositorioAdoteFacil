@@ -1,5 +1,5 @@
 <?php
-include "conexao2.php";
+include "../conexao.php";
     // recebe is valores enviados via POST da página cadastro.html
     $nome = $_POST['nomeDoador'];
     $email = $_POST['email'];

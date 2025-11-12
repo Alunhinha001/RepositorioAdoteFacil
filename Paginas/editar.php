@@ -42,7 +42,7 @@ $doador = mysqli_fetch_assoc($result);
           <span></span><span></span><span></span>
         </label>
         <div class="dropdown-content">
-          <a href="index.html">Início</a>
+          <a href="../index.html">Início</a>
           <a href="sobre.html">Sobre Nós</a>
           <a href="adote.html">Adote um pet</a>
           <a href="comoajudar.html">Como ajudar</a>
