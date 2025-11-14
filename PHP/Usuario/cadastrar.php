@@ -10,7 +10,7 @@ include "../conexao.php";
     $senha = $_POST['senha'];
     $fotoNome = $_FILES['foto']['name'];
     $fotoTemp = $_FILES['foto']['tmp_name'];
-    $fotoCaminho = '../../IMG/usuario' . $fotoNome;
+    $fotoCaminho = '../../IMG/usuario/' . $fotoNome;
 
     move_uploaded_file($fotoTemp, $fotoCaminho);
 
