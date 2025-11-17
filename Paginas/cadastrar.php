@@ -1,3 +1,15 @@
+<?php 
+  require '../PHP/conexao.php';
+  session_start();
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST['nomeDoador'];
+    $email = $_POST['email'];
+  }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,7 +46,7 @@
   </header>
 
   <div class="box">
-    <form action="../PHP/Usuario/cadastrar.php" method="post" enctype="multipart/form-data">
+    <form action="../PHP/Usuario/cadastrarUser.php" method="post" enctype="multipart/form-data">
       <fieldset>
         <legend><b>Cadastre-se</b></legend>
 
@@ -47,11 +59,6 @@
           <label for="email" class="labelinput">E-mail</label>
           <input type="email" name="email" id="email" class="inputUser" required>
           <p>Coloque um e-mail ativo. As mensagens da adoção serão enviadas para ele.</p>
-        </div>
-
-        <div class="inputBox">
-          <label for="Cemail" class="labelinput">Confirme seu E-mail</label>
-          <input type="email" name="Cemail" id="Cemail" class="inputUser" required>
         </div>
 
         <div class="inputBox">
