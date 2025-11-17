@@ -1,5 +1,5 @@
 <?php
-    require_once 'conexao2.php'; // garante que o arquivo seja iniciado primeiro
+    require_once '../conexao.php'; // garante que o arquivo seja iniciado primeiro
     session_start(); //inicia a sessão
 
     if(isset($_POST['bt-entrar'])): //isset = se existir ação do botão bt-entrar
@@ -13,7 +13,7 @@
             $erro = "Todos os campos devem ser preenchidos..";
             echo "<script>alert('Todos os campos devem ser preenchidos!');</script>"; // Imprime uma alert na tela utilizando script
             echo $erro; //garante que a mensagem de erro seja exibida
-            header('Location: ../entrar.html');
+            header('Location: ../../Paginas/entrar.html');
 
         else : // caso haja algo nas duas variáveis tenta efetuar o login
             $sql = "SELECT email FROM cliente WHERE email = '$email'";
@@ -40,13 +40,13 @@
                 else: //caso email ou senha diferente
                     $erro = "Usuário ou senha não conferem.";
                     echo "<script>alert('Usuário ou senha não conferem.');</script>";
-                    header('Location: ../../entrar.html');
+                    header('Location: ../../Paginas/entrar.html');
                     echo $erro; // garante que a mensagem de erro seja exibida
                 endif;
             else:
                 $erro = "Usuário não encontrado.";
                 echo "<script>alert('usuário não encontrado.');</script>"; // Imprime uma alert na tela utilizando script
-                header('Location: ../../entrar.html');
+                header('Location: ../../Paginas/entrar.html');
                 echo $erro; //garante que a mensagem de erro seja exibida
             endif;
         endif;

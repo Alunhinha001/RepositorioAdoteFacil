@@ -1,5 +1,5 @@
 <?php
-include "conexao2.php";
+include "../conexao.php";
     // recebe is valores enviados via POST da página cadastro.html
     $nome = $_POST['nomeDoador'];
     $email = $_POST['email'];
@@ -10,7 +10,7 @@ include "conexao2.php";
     $senha = $_POST['senha'];
     $fotoNome = $_FILES['foto']['name'];
     $fotoTemp = $_FILES['foto']['tmp_name'];
-    $fotoCaminho = '../../imagens/' . $fotoNome;
+    $fotoCaminho = '../../IMG/usuario/' . $fotoNome;
 
     move_uploaded_file($fotoTemp, $fotoCaminho);
 
@@ -22,7 +22,7 @@ include "conexao2.php";
     // Verificação
     if (mysqli_query($conexao, $inserirSQL)) {
         echo "Usuário Cadastrado!";
-        header('Location: ../../entrar.html');
+        header('Location: ../../Paginas/entrar.html');
     } else {
         echo "Usuário não cadastrado. Erro: ".mysqli_connect_error($conexao);
     }

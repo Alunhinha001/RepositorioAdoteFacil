@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include "conexao2.php";
+include "../conexao.php";
 session_start();
 
 // Verifica se o usuário está logado
@@ -29,7 +29,7 @@ $fotoTemp = $_FILES['foto']['tmp_name'] ?? '';
 if (!empty($fotoNome)) {
     // Gera um nome único para evitar conflito
     $fotoNome = uniqid() . "_" . basename($fotoNome);
-    $fotoCaminho = '../../imagens/' . $fotoNome;
+    $fotoCaminho = '../../IMG/usuario' . $fotoNome;
 
     // Move a foto para a pasta
     move_uploaded_file($fotoTemp, $fotoCaminho);

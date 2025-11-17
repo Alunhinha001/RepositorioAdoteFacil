@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-include 'conexao2.php'; // ou o caminho correto para seu arquivo de conexão
+include '../conexao.php'; // ou o caminho correto para seu arquivo de conexão
 
 if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
-    header('Location: ../../entrar.html');
+    header('Location: ../../Paginas/entrar.html');
     exit;
 }
 
@@ -194,7 +194,7 @@ $usuario = mysqli_fetch_assoc($result);
         <header>
             <nav class="navbar">
                 <div class="logo">
-                <a href="index.html"><img src="../../images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+                <a href="index.html"><img src="../../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
                 </div>
                 <div class="dropdown">
                     <input type="checkbox" id="burger-menu">
@@ -205,12 +205,12 @@ $usuario = mysqli_fetch_assoc($result);
                     </label>
 
                     <div class="dropdown-content">
-                    <a href="../index.html" id="inicio">Início</a>
-                    <a href="../sobre.html">Sobre Nós</a>
-                    <a href="../adote.php">Adote um pet</a>
-                    <a href="../comoajudar.html">Como ajudar</a>
-                    <a href="../entrar.html">Entrar</a>
-                    <a href="../PHP/perfil.php">perfil</a>
+                    <a href="../../index.html" id="inicio">Início</a>
+                    <a href="../../Paginas/sobre.html">Sobre Nós</a>
+                    <a href="../../Paginas/adote.php">Adote um pet</a>
+                    <a href="../../Paginas/comoajudar.html">Como ajudar</a>
+                    <a href="../../Paginas/entrar.html">Entrar</a>
+                    <a href="perfil.php">perfil</a>
                     </div>
                 </div>
             </nav>
