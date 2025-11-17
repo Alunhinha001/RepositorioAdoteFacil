@@ -37,7 +37,7 @@ $doador = mysqli_fetch_assoc($result);
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="../images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+        <a href="index.html"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
       </div>
       <div class="dropdown">
         <input type="checkbox" id="burger-menu">
@@ -45,7 +45,7 @@ $doador = mysqli_fetch_assoc($result);
           <span></span><span></span><span></span>
         </label>
         <div class="dropdown-content">
-          <a href="../index.html">Início</a>
+          <a href="../index.php">Início</a>
           <a href="sobre.html">Sobre Nós</a>
           <a href="adote.php">Adote um pet</a>
           <a href="comoajudar.html">Como ajudar</a>
