@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,8 +32,11 @@
                 <a href="Paginas/sobre.html">Sobre Nós</a>
                 <a href="Paginas/adote.php">Adote um pet</a>
                 <a href="comoajudar.html">Como ajudar</a>
-                <a href="Paginas/entrar.html">Entrar</a>
-                <a href="PHP/Usuario/perfil.php">perfil</a>
+                <?php if (isset($_SESSION['online']) && $_SESSION['online'] == true): ?>
+                    <a href="PHP/Usuario/perfil.php" id="bt-perfil">Perfil</a>
+                <?php else: ?>
+                    <a href="Paginas/entrar.html" id="bt-entrar">Entrar</a>
+                <?php endif; ?>
                 </div>
             </div>
         </nav>

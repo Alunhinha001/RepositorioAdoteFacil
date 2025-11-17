@@ -29,7 +29,7 @@ $fotoTemp = $_FILES['foto']['tmp_name'] ?? '';
 if (!empty($fotoNome)) {
     // Gera um nome único para evitar conflito
     $fotoNome = uniqid() . "_" . basename($fotoNome);
-    $fotoCaminho = '../../IMG/usuario' . $fotoNome;
+    $fotoCaminho = '../../IMG/usuario/' . $fotoNome;
 
     // Move a foto para a pasta
     move_uploaded_file($fotoTemp, $fotoCaminho);
@@ -54,7 +54,7 @@ if (!empty($fotoNome)) {
     $sql .= ", foto = '$fotoNome'";
 }
 
-$sql .= " WHERE id = '$id_usuario'";
+$sql .= " WHERE id_cliente = '$id_usuario'";
 
 // --- Executa o update ---
 if (mysqli_query($conexao, $sql)) {
