@@ -1,32 +1,82 @@
 <?php
+session_start();
 include "../conexao.php";
-    // recebe is valores enviados via POST da página cadastro.html
-    $nome = $_POST['nomeDoador'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $whatsapp = $_POST['whats'];
-    $estado = $_POST['estado'];
-    $cidade = $_POST['cidade'];
-    $senha = $_POST['senha'];
-    $fotoNome = $_FILES['foto']['name'];
-    $fotoTemp = $_FILES['foto']['tmp_name'];
-    $fotoCaminho = '../../IMG/usuario/' . $fotoNome;
 
-    move_uploaded_file($fotoTemp, $fotoCaminho);
+// Recebe valores via POST
+$nome      = $_POST['nomeDoador'];
+$email     = $_POST['email'];
+$telefone  = $_POST['telefone'];
+$whatsapp  = $_POST['whats'];
+$estado    = $_POST['estado'];
+$cidade    = $_POST['cidade'];
+$senhaRaw  = $_POST['senha'];
 
-    //inserir os valores das variáveis na tabela cliente do banco login
-    $inserirSQL = "INSERT INTO cliente(nomeCompleto, email, telefone, whatsapp, estado, cidade, senha, foto) 
-                    VALUES ('$nome', '$email', '$telefone', '$whatsapp', '$estado', '$cidade', '$senha', '$fotoNome')";
-    //OBS: sempre que os valores forem do tipo VARCHAR, deve ficar entre 'aspas simples'
+// Criptografa a senha
+$senha = password_hash($senhaRaw, PASSWORD_DEFAULT);
 
-    // Verificação
-    if (mysqli_query($conexao, $inserirSQL)) {
-        echo "Usuário Cadastrado!";
-        header('Location: ../../Paginas/entrar.html');
-    } else {
-        echo "Usuário não cadastrado. Erro: ".mysqli_connect_error($conexao);
+// ------------------
+// UPLOAD DA FOTO
+// ------------------
+$fotoNome = null;
+
+if (!empty($_FILES['foto']['name'])) {
+
+    // Pasta onde será salva a foto
+    $pasta = "../../IMG/usuario/";
+
+    // Cria pasta se não existir
+    if (!is_dir($pasta)) {
+        mkdir($pasta, 0777, true);
     }
 
-    // Encerra a conexão para evitar travamentos no banco de dados
-    mysqli_close($conexao);
+    // Nome único para a foto
+    $fotoNome = uniqid() . "-" . $_FILES['foto']['name'];
+
+    $fotoTemp = $_FILES['foto']['tmp_name'];
+    $caminhoFinal = $pasta . $fotoNome;
+
+    move_uploaded_file($fotoTemp, $caminhoFinal);
+}
+
+// ------------------
+// INSERIR NO BANCO
+// ------------------
+$inserirSQL = "INSERT INTO cliente 
+(nomeCompleto, email, telefone, whatsapp, estado, cidade, senha, foto) 
+VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+$stmt = $conexao->prepare($inserirSQL);
+$stmt->bind_param(
+    "ssssssss",
+    $nome,
+    $email,
+    $telefone,
+    $whatsapp,
+    $estado,
+    $cidade,
+    $senha,
+    $fotoNome
+);
+
+if ($stmt->execute()) {
+
+    // Criar sessão automaticamente (USUÁRIO LOGADO)
+    $_SESSION['usuario'] = [
+        "id"        => $stmt->insert_id,
+        "nome"      => $nome,
+        "email"     => $email,
+        "telefone"  => $telefone,
+        "cidade"    => $cidade,
+        "estado"    => $estado,
+        "foto"      => $fotoNome
+    ];
+
+    header("Location: ../../Paginas/entrar.php");
+    exit;
+
+} else {
+    echo "Erro ao cadastrar: " . $stmt->error;
+}
+
+$conexao->close();
 ?>
