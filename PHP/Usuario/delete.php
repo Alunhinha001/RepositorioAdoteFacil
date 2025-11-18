@@ -1,32 +1,52 @@
 <?php
 session_start();
-include('conexao.php');
+require '../conexao.php';
 
-if (isset($_SESSION['idUsuario'])) {
-    $id = $_SESSION['idUsuario'];
+// Verifica sessão
+if (!isset($_SESSION['usuario_id'])) {
+    echo "<script>alert('Sessão expirada! Faça login novamente.'); window.location.href='../../Paginas/entrar.html';</script>";
+    exit;
+}
 
-    // Usa mysqli (não PDO)
-    $sql = "DELETE FROM cliente WHERE id_cliente = ?";
-    $stmt = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($stmt, "i", $id);
+$id = $_SESSION['usuario_id'];
 
-    if (mysqli_stmt_execute($stmt)) {
-        if (mysqli_stmt_affected_rows($stmt) > 0) {
-            echo "Usuário excluído com sucesso!";
-            session_destroy();
-            header("Location: ../../Paginas/cadastrar.html");
-            exit;
-        } else {
-            echo "Usuário não encontrado.";
-        }
-    } else {
-        echo "Erro ao excluir o usuário: " . mysqli_error($conexao);
+// Buscar a foto antes de apagar
+$sqlFoto = "SELECT foto FROM cliente WHERE id_cliente = ?";
+$stmtFoto = $conexao->prepare($sqlFoto);
+$stmtFoto->bind_param("i", $id);
+$stmtFoto->execute();
+$resultFoto = $stmtFoto->get_result();
+
+if ($resultFoto->num_rows > 0) {
+    $foto = $resultFoto->fetch_assoc()['foto'];
+    $caminhoFoto = "../../IMG/usuario/" . $foto;
+
+    if (file_exists($caminhoFoto) && is_file($caminhoFoto)) {
+        unlink($caminhoFoto); // Apaga a foto
     }
+}
 
-    mysqli_stmt_close($stmt);
-    mysqli_close($conexao);
+// Excluir usuário do banco
+$sql = "DELETE FROM cliente WHERE id_cliente = ?";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("i", $id);
+
+if ($stmt->execute()) {
+
+    session_unset();
+    session_destroy();
+
+    echo "<script>
+            alert('Conta deletada com sucesso.');
+            window.location.href='../../Paginas/entrar.html';
+          </script>";
+    exit;
+
 } else {
-    echo "ID de usuário não fornecido.";
+    echo "<script>
+            alert('Erro ao deletar conta.');
+            window.location.href='../Paginas/perfil.php';
+          </script>";
     exit;
 }
 ?>

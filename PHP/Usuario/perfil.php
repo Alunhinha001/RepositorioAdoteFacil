@@ -1,25 +1,28 @@
 <?php
 session_start();
+require '../conexao.php';
 
-include '../conexao.php'; // ou o caminho correto para seu arquivo de conexão
 
-if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
+if (!isset($_SESSION['usuario_id'])) {
     header('Location: ../../Paginas/entrar.html');
     exit;
 }
 
-$id_usuario = $_SESSION['idUsuario'];
+$id_usuario = $_SESSION['usuario_id'];
 
-// Busca os dados atualizados do banco
-$sql = "SELECT * FROM cliente WHERE id_cliente = '$id_usuario'";
-$result = mysqli_query($conexao, $sql);
+$sql = "SELECT * FROM cliente WHERE id_cliente = ?";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("i", $id_usuario);
+$stmt->execute();
+$result = $stmt->get_result();
 
-if (!$result || mysqli_num_rows($result) === 0) {
+if ($result->num_rows === 0) {
     die("Usuário não encontrado.");
 }
 
-$usuario = mysqli_fetch_assoc($result);
+$usuario = $result->fetch_assoc();
 ?>
+
 
 
 <!DOCTYPE html>
@@ -28,7 +31,7 @@ $usuario = mysqli_fetch_assoc($result);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="/JS/delete.js" defer></script>
+    <script src="../../JS/delete.js" defer></script>
     <link rel="stylesheet" href="../../css/index.css">
     <link rel="stylesheet" href="../../css/padrao.css">
     <style>
@@ -220,7 +223,7 @@ $usuario = mysqli_fetch_assoc($result);
             <h1>Perfil do Usuário</h1>
 
         <div class="">
-            <img src="../../IMG/usuario<?= htmlspecialchars($usuario['foto']) ?>" alt="Foto do perfil" class="fotoPerfil">
+            <img src="../../IMG/usuario/<?= htmlspecialchars($usuario['foto']) ?>" alt="Foto do perfil" class="fotoPerfil">
         </div>
         <div class="info">
             <strong>Nome:</strong> <?= htmlspecialchars($usuario['nomeCompleto']) ?>
@@ -244,8 +247,10 @@ $usuario = mysqli_fetch_assoc($result);
         
         <div id="registrar">
             <a href="../../Paginas/entrar.html" class="btn btn-primary">Sair</a>
-            <a href="../../Paginas/editar.php" class="btn btn-primary">Editar Perfil</a>
-            <button onclick="deletar()">Deletar</button>
+            <a href="editar.php" class="btn btn-primary">Editar Perfil</a>
+            <form action="delete.php" method="POST" onsubmit="return confirm('Tem certeza que deseja deletar sua conta?');">
+                <button type="submit">Deletar</button>
+            </form>
         </div>
         
     </div>

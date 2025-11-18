@@ -1,83 +1,201 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-include "../conexao.php";
 session_start();
+require "../conexao.php";
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
-    echo "<script>alert('Sessão expirada. Faça login novamente.'); window.location.href='../../entrar.html';</script>";
+// Se não estiver logado
+if (!isset($_SESSION['usuario_id'])) {
+    echo "<script>alert('Sessão expirada. Faça login novamente.'); window.location.href='entrar.html';</script>";
     exit;
 }
 
-$id_usuario = $_SESSION['idUsuario'];
+$id_usuario = $_SESSION['usuario_id'];
 
-// Recebe os valores do formulário
-$nome = mysqli_real_escape_string($conexao, $_POST['nomeDoador']);
-$email = mysqli_real_escape_string($conexao, $_POST['email']);
-$telefone = mysqli_real_escape_string($conexao, $_POST['telefone']);
-$whatsapp = mysqli_real_escape_string($conexao, $_POST['whats']);
-$estado = mysqli_real_escape_string($conexao, $_POST['estado']);
-$cidade = mysqli_real_escape_string($conexao, $_POST['cidade']);
-$senha = trim($_POST['senha']);
+// ---------------------- //
+// PROCESSAR O FORMULÁRIO //
+// ---------------------- //
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-// --- Upload da foto (opcional)
-$fotoNome = $_FILES['foto']['name'] ?? '';
-$fotoTemp = $_FILES['foto']['tmp_name'] ?? '';
+    // Sanitização
+    $nome = $_POST['nomeDoador'];
+    $email = $_POST['email'];
+    $telefone = $_POST['telefone'];
+    $whatsapp = $_POST['whats'];
+    $estado = $_POST['estado'];
+    $cidade = $_POST['cidade'];
+    $senha = trim($_POST['senha']);
 
-if (!empty($fotoNome)) {
-    // Gera um nome único para evitar conflito
-    $fotoNome = uniqid() . "_" . basename($fotoNome);
-    $fotoCaminho = '../../IMG/usuario/' . $fotoNome;
+    // FOTO
+    $novoNomeFoto = null;
+    if (!empty($_FILES['foto']['name'])) {
+        $ext = pathinfo($_FILES['foto']['name'], PATHINFO_EXTENSION);
+        $novoNomeFoto = uniqid() . "." . $ext;
 
-    // Move a foto para a pasta
-    move_uploaded_file($fotoTemp, $fotoCaminho);
-}
+        move_uploaded_file($_FILES['foto']['tmp_name'], "../../IMG/usuario/" . $novoNomeFoto);
+    }
 
-// --- Monta o SQL dinamicamente ---
-$sql = "UPDATE cliente SET 
-            nomeCompleto = '$nome', 
-            email = '$email', 
-            telefone = '$telefone', 
-            whatsapp = '$whatsapp', 
-            estado = '$estado', 
-            cidade = '$cidade'";
-
-// Se a senha foi preenchida, inclui na query
-if (!empty($senha)) {
-    $sql .= ", senha = '$senha'";
-}
-
-// Se o usuário enviou uma nova foto, atualiza também
-if (!empty($fotoNome)) {
-    $sql .= ", foto = '$fotoNome'";
-}
-
-$sql .= " WHERE id_cliente = '$id_usuario'";
-
-// --- Executa o update ---
-if (mysqli_query($conexao, $sql)) {
-    // Atualiza os dados na sessão para refletir as mudanças
-    $_SESSION['nomeCompleto'] = $nome;
-    $_SESSION['email'] = $email;
-    $_SESSION['telefone'] = $telefone;
-    $_SESSION['whatsapp'] = $whatsapp;
-    $_SESSION['estado'] = $estado;
-    $_SESSION['cidade'] = $cidade;
+    // Monta UPDATE
+    $sql = "UPDATE cliente SET 
+            nomeCompleto = ?, 
+            email = ?, 
+            telefone = ?, 
+            whatsapp = ?, 
+            estado = ?, 
+            cidade = ?";
 
     if (!empty($senha)) {
-        $_SESSION['senha'] = $senha;
+        $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+        $sql .= ", senha = '$senhaHash'";
     }
 
-    if (!empty($fotoNome)) {
-        $_SESSION['foto'] = $fotoNome;
+    if (!empty($novoNomeFoto)) {
+        $sql .= ", foto = '$novoNomeFoto'";
     }
 
-    echo "<script>alert('Dados atualizados com sucesso!'); window.location.href='perfil.php';</script>";
-} else {
-    echo "Erro ao atualizar: " . mysqli_error($conexao);
+    $sql .= " WHERE id_cliente = ?";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("ssssssi", $nome, $email, $telefone, $whatsapp, $estado, $cidade, $id_usuario);
+    $stmt->execute();
+
+    echo "<script>alert('Perfil atualizado com sucesso!'); window.location.href='editar.php';</script>";
+    exit;
 }
 
-mysqli_close($conexao);
+// --------------------------- //
+// BUSCA OS DADOS DO USUÁRIO   //
+// --------------------------- //
+$sql = "SELECT * FROM cliente WHERE id_cliente = ?";
+$stmt = $conexao->prepare($sql);
+$stmt->bind_param("i", $id_usuario);
+$stmt->execute();
+$res = $stmt->get_result();
+$usuario = $res->fetch_assoc();
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+
+    <link rel="stylesheet" href="../../css/padrao.css">
+    <link rel="stylesheet" href="../../css/index.css">
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .container {
+            max-width: 550px;
+            background: #fff;
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 16px;
+            box-shadow: 0 0 10px #0002;
+        }
+
+        h1 {
+            color: #7a8ccb;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fotoAtual {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #7a8ccb;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        label {
+            font-weight: 600;
+            margin-top: 15px;
+            display: block;
+            color: #444;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #aaa;
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            background: #7a8ccb;
+            color: #fff;
+            padding: 15px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6577c2;
+        }
+
+        .buttonSair{
+            background-color: #f00;
+        }
+
+        .buttonSair:hover{
+            background-color: rgba(224, 2, 2, 1);
+        }
+
+        .buttonSair a{
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Editar Perfil</h1>
+
+    <img src="../../IMG/usuario/<?= htmlspecialchars($usuario['foto']) ?>" class="fotoAtual" alt="Foto atual">
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Nome Completo</label>
+        <input type="text" name="nomeDoador" value="<?= htmlspecialchars($usuario['nomeCompleto']) ?>" required>
+
+        <label>E-mail</label>
+        <input type="email" name="email" value="<?= htmlspecialchars($usuario['email']) ?>" required>
+
+        <label>Telefone</label>
+        <input type="text" name="telefone" value="<?= htmlspecialchars($usuario['telefone']) ?>">
+
+        <label>WhatsApp</label>
+        <input type="text" name="whats" value="<?= htmlspecialchars($usuario['whatsapp']) ?>">
+
+        <label>Estado</label>
+        <input type="text" name="estado" value="<?= htmlspecialchars($usuario['estado']) ?>">
+
+        <label>Cidade</label>
+        <input type="text" name="cidade" value="<?= htmlspecialchars($usuario['cidade']) ?>">
+
+        <label>Nova Senha (opcional)</label>
+        <input type="password" name="senha" placeholder="Deixe vazio para manter a atual">
+
+        <label>Nova Foto (opcional)</label>
+        <input type="file" name="foto">
+
+        <button type="submit">Salvar Alterações</button>
+    </form>
+    <a href="perfil.php"><button class="buttonSair">Sair</button></a>
+</div>
+
+</body>
+</html>
