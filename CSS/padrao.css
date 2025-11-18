@@ -168,69 +168,80 @@ header {
 
 
 
-/* === FOOTER === */
+/* FOOTER REDUZIDO FISICAMENTE */
 footer {
     background-color: var(--cinza-claro);
-    border-top: 2px solid var(--cinza-medio);
+    border-top: 3px solid var(--cinza-medio);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: calc((100vw - 1200px) / 2);
-    padding-right: calc((100vw - 1200px) / 2);
+    padding: 10px calc((100vw - 1200px) / 2);  /* <-- diminuído */
     font-family: Arial, sans-serif;
+    text-align: justify;
+    gap: 40px;
     color: #333;
-    min-width: 320px;
 }
+footer h2{
+  color:  #4b0082;
+  white-space: nowrap;
+  margin-right: 70px;
+}
+
 .footer-coluna {
     flex: 1 1 250px;
-    margin: 10px;
-    max-height: 180px;
+    margin: 5px 10px;
 }
-#cl2 {
-    flex: 1 1 400px;
-    margin-inline: 10px;
-}
-#cl3 {
-  flex: 1 1 180px;
-  display: flex;
-}
-.footer-coluna h2 {
-    font-size: 20px;
-    color: var(--roxo);
-    margin-bottom: 10px;
-}
+
+/* Deixa tudo mais compacto */
 .footer-coluna p,
 .footer-coluna a {
-    font-size: 14px;
-    color: var(--cinza-escuro);
-    margin: 4px 0;
-    text-decoration: none;
+    margin: 2px 0;
 }
-.footer-coluna a:hover {
-    text-decoration: underline;
-    color: var(--verde-hover);
+#cl2 a{
+  font-size: 16px;
+  text-decoration: none;
 }
-.app-link {
+
+/* Coluna dos contatos */
+#cl3 {
+    flex: 1 1 200px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-#cl3 .app-link a img {
-    height: 55px !important;
-    width: auto !important;
+    color:  #4b0082;
 }
 
+#cl4{
+  display: flex;
+  flex: 1 1 180px;
+  justify-content: center;
+  margin-bottom: -60px;
+  margin-top: -10px;
+  ma
+}
 
+/* LINHA COM AS LOGOS */
+.icons-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;                /* espaço entre ícones */
+    margin-top: 5px;
+}
+
+/* TAMANHO PADRÃO DAS LOGOS */
+.icons-row img {
+    height: 50px;
+    width: auto;
+}
+
+/* Footer final */
 .footer-rodape {
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+    padding-top: 10px;        /* <-- diminuído */
     font-size: 13px;
-    color: var(--cinza-rodape);
+    border-top: 1px solid #ddd;
 }
+
 
 /* ===== MENU HAMBURGUER DO PERFIL ===== */
 
