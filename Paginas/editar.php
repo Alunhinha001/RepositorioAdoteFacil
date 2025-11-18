@@ -125,5 +125,39 @@ $doador = mysqli_fetch_assoc($result);
       </fieldset>
     </form>
   </div>
+      <footer>
+    <div class="footer-coluna" id="cl1">
+        <h2>Peludinhos do bem</h2>
+        <p>08989-8989898</p>
+        <p>Rua Santa Helena, 21, Parque Alvorada,<br> Imperatriz-MA, CEP 65919-505</p>
+        <p>adotefacil@peludinhosdobem.org</p>
+    </div>
+
+    <div class="footer-coluna" id="cl2">
+        <a href="sobre.html"></a>
+        <h2>Conheça a História da Peludinhos do Bem</h2>
+    </div>
+
+    <div class="footer-coluna" id="cl3">
+        <h2>Contatos</h2>
+
+        <div class="icons-row">
+            <a href="https://www.instagram.com/">
+            <img src="IMG/index/insta.png" alt="Instagram">
+            </a>
+
+            <a href="https://web.whatsapp.com/">
+            <img src="IMG/index/—Pngtree—whatsapp icon whatsapp logo whatsapp_3584845.png" alt="Whatsapp">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="footer-rodape">
+        <p>Desenvolvido pela Turma-20 Tecnico de Informatica para Internet (Peludinhos do Bem). 2025 &copy;Todos os direitos reservados.</p>
+    </div>
+    
+    </footer>
+
 </body>
 </html>
