@@ -13,7 +13,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-       <a href="index.html"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+       <a href="../index.php"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
       </div>
       <div class="dropdown">
         <input type="checkbox" id="burger-menu">
@@ -23,7 +23,7 @@
           <span></span>
         </label>
         <div class="dropdown-content">
-          <a href="../index.html">Início</a>
+          <a href="../index.php">Início</a>
           <a href="sobre.html">Sobre Nós</a>
           <a href="adote.php">Adote um pet</a>
           <a href="comoajudar.html">Como ajudar</a>
@@ -34,7 +34,7 @@
   </header>
 
   <div class="box">
-    <form action="../PHP/Usuario/cadastrar.php" method="post" enctype="multipart/form-data">
+    <form action="../PHP/Usuario/cadastrarUser.php" method="post" enctype="multipart/form-data">
       <fieldset>
         <legend><b>Cadastre-se</b></legend>
 
@@ -47,11 +47,6 @@
           <label for="email" class="labelinput">E-mail</label>
           <input type="email" name="email" id="email" class="inputUser" required>
           <p>Coloque um e-mail ativo. As mensagens da adoção serão enviadas para ele.</p>
-        </div>
-
-        <div class="inputBox">
-          <label for="Cemail" class="labelinput">Confirme seu E-mail</label>
-          <input type="email" name="Cemail" id="Cemail" class="inputUser" required>
         </div>
 
         <div class="inputBox">

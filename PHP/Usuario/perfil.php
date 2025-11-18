@@ -220,10 +220,7 @@ $usuario = mysqli_fetch_assoc($result);
             <h1>Perfil do Usuário</h1>
 
         <div class="">
-            <img src="../../imagens/<?= htmlspecialchars($usuario['foto']) ?>" alt="Foto do perfil" class="fotoPerfil">
-        </div>
-        <div class="info">
-            <strong>ID:</strong> <?= htmlspecialchars($usuario['id']) ?>
+            <img src="../../IMG/usuario<?= htmlspecialchars($usuario['foto']) ?>" alt="Foto do perfil" class="fotoPerfil">
         </div>
         <div class="info">
             <strong>Nome:</strong> <?= htmlspecialchars($usuario['nomeCompleto']) ?>
@@ -246,8 +243,8 @@ $usuario = mysqli_fetch_assoc($result);
         
         
         <div id="registrar">
-            <a href="../../entrar.html" class="btn btn-primary">Sair</a>
-            <a href="../../editar.php" class="btn btn-primary">Editar Perfil</a>
+            <a href="../../Paginas/entrar.html" class="btn btn-primary">Sair</a>
+            <a href="../../Paginas/editar.php" class="btn btn-primary">Editar Perfil</a>
             <button onclick="deletar()">Deletar</button>
         </div>
         

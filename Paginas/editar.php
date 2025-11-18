@@ -1,6 +1,9 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
-include 'PHP/UsuarioPhp/conexao2.php';
+include '../PHP/conexao.php';
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
@@ -11,7 +14,7 @@ if (!isset($_SESSION['online']) || !isset($_SESSION['idUsuario'])) {
 $id_usuario = $_SESSION['idUsuario'];
 
 // Busca os dados do usuário logado
-$sql = "SELECT * FROM cliente WHERE id_usuario = '$id_usuario'";
+$sql = "SELECT * FROM cliente WHERE id_cliente = '$id_usuario'";
 $result = mysqli_query($conexao, $sql);
 
 if (!$result || mysqli_num_rows($result) === 0) {
@@ -27,14 +30,14 @@ $doador = mysqli_fetch_assoc($result);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editar Perfil - Adote Fácil</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/padrao.css" />
-  <link rel="stylesheet" href="css/cadastrar.css" />
+  <link rel="stylesheet" href="../css/padrao.css" />
+  <link rel="stylesheet" href="../css/cadastrar.css" />
 </head>
 <body>
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+        <a href="../index.php"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
       </div>
       <div class="dropdown">
         <input type="checkbox" id="burger-menu">
@@ -42,9 +45,9 @@ $doador = mysqli_fetch_assoc($result);
           <span></span><span></span><span></span>
         </label>
         <div class="dropdown-content">
-          <a href="../index.html">Início</a>
+          <a href="../index.php">Início</a>
           <a href="sobre.html">Sobre Nós</a>
-          <a href="adote.html">Adote um pet</a>
+          <a href="adote.php">Adote um pet</a>
           <a href="comoajudar.html">Como ajudar</a>
           <a href="entrar.html">Entrar</a>
         </div>
@@ -53,7 +56,7 @@ $doador = mysqli_fetch_assoc($result);
   </header>
 
   <div class="box">
-    <form action="PHP/UsuarioPhp/editar.php" method="post" enctype="multipart/form-data">
+    <form action="../PHP/Usuario/editar.php" method="post" enctype="multipart/form-data">
       <fieldset>
         <legend><b>Reescreva as informações do Seu Perfil</b></legend>
 

@@ -57,3 +57,10 @@ setInterval(() => {
   mostrarSlide(slideAtual);
 }, 6000);
 
+const menuPerfil = document.querySelector('.perfil-menu');
+const botaoEntrar = document.getElementById('btn-entrar');
+
+// Se o perfil existir, oculta o botão "Entrar"
+if (menuPerfil) {
+    botaoEntrar?.style.setProperty("display", "none", "important");
+}

@@ -1,14 +1,5 @@
 <?php
 session_start();
-
-// Se o usuário não estiver logado, volta para o index normal
-if (!isset($_SESSION['online']) || $_SESSION['online'] !== true) {
-  header('Location: index.html');
-  exit();
-}
-
-// Define a imagem do perfil
-$caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'images/user-icon.png';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,30 +16,38 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
     <header>
         <nav class="navbar">
             <div class="logo">
-              <a href="index2.php"><img src="images/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+                <a href="index.php"><img src="IMG/Logotipo.jpg" alt="logo_Adote_Fácil"></a>
             </div>
-            <div class="dropdown">
-                <input type="checkbox" id="burger-menu">
-                <label class="burger" for="burger-menu">
+        <div class="dropdown">
+            <input type="checkbox" id="burger-menu">
+            <label class="burger" for="burger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-                </label>
+            </label>
+        <div class="dropdown-content">
+            <a href="index.php">Início</a>
+            <a href="Paginas/sobre.html">Sobre Nós</a>
+            <a href="Paginas/adote.php">Adote um pet</a>
+            <a href="Paginas/comoajudar.html">Como ajudar</a>
 
-                <div class="dropdown-content">
-                <a href="index2.php" id="inicio">Início</a>
-<<<<<<< HEAD
-                <a href="sobre.php">Sobre Nós</a>
-                <a href="adote.php">Adote um pet</a>
-                <a href="comoajudar.html">Como ajudar</a>
-                <a href="">Meu Perfil</a>
-=======
-                <a href="Paginas/sobre.html">Sobre Nós</a>
-                <a href="Paginas/adote.php">Adote um pet</a>
-                <a href="Paginas/comoajudar.html">Como ajudar</a>
-                <a href="PHP/Usuario/perfil.php">Meu Perfil</a>
->>>>>>> 50fad32f604806600c0aab70b2c492bf076dd2ea
+            <?php if (!isset($_SESSION['usuario_id'])): ?>
+                <a href="Paginas/entrar.html" id="btn-entrar" class="botao-entrar">Entrar</a>
+            <?php else: ?>
+                <div class="usuario-box">
+                    <img src="IMG/usuario/<?php echo $_SESSION['usuario_foto']; ?>" 
+                         class="foto-perfil" alt="Foto">
+                    <span class="nome-user">
+                        <?php echo explode(" ", $_SESSION['usuario_nome'])[0]; ?>
+                    </span>
+                    <div class="dropdown-user">
+                        <a href="Paginas/perfil.php">Perfil</a>
+                        <a href="Paginas/editar-perfil.php">Editar Perfil</a>
+                        <a href="PHP/Usuario/logout.php">Sair</a>
+                    </div>
                 </div>
+            <?php endif; ?>
+            </div>
             </div>
         </nav>
     </header>
@@ -134,13 +133,13 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href=""><button class="qadot">Quero adotar</button></a>
+                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
                 <div class="pet-card">
                     <div class="pet-imagem">
-                        <img src="IMGadote/golden.jpg" alt="cachorrinho fofo" />
+                        <img src="IMG/adote/golden.jpg" alt="cachorrinho fofo" />
                     </div>
                     <div class="pet-info">
                         <h2>Nome: thor</h2>
@@ -154,7 +153,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href=""><button class="qadot">Quero adotar</button></a>
+                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -174,7 +173,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href=""><button class="qadot">Quero adotar</button></a>
+                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -194,7 +193,7 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
                         <p><strong>Porte:</strong> pequeno</p>
                         <p><strong>Raça:</strong> kokoni</p>
                         <p><strong>Sobre pet:</strong> Cachorrinho muito dócil, carinhoso, brincalhão, adora brincar com bolinhas</p>
-                        <a href=""><button class="qadot">Quero adotar</button></a>
+                        <a href="entrar.html"><button class="qadot">Quero adotar</button></a>
                     </div>
                     <button class="saiba">Saber mais</button>
                 </div>
@@ -206,35 +205,43 @@ $caminhoFoto = !empty($_SESSION['fotoUsuario']) ? $_SESSION['fotoUsuario'] : 'im
 
 	</main>
 
-<footer>
+    <footer>
+  
     <div class="footer-coluna" id="cl1">
-      <h2>Peludinhos do bem</h2>
-      <p>08989-8989898</p>
-      <p>Rua Santa Helena, 21, Parque Alvorada, Imperatriz - MA, CEP 65919-505</p>
-      <p>adotefacil@peludinhosdobem.org</p>
+        <h2>Peludinhos do bem</h2>
+        <p>08989-8989898</p>
+        <p>Rua Santa Helena, 21, Parque Alvorada, Imperatriz - MA, CEP 65919-505</p>
+        <p>adotefacil@peludinhosdobem.org</p>
     </div>
+
     <div class="footer-coluna" id="cl2">
-      <a href="sobre.html">
+        <a href="sobre.html"></a>
         <h2>Conheça a História da Peludinhos do Bem</h2>
-      </a>
     </div>
+
     <div class="footer-coluna" id="cl3">
-      <div class="app-link">
-        <p>DISPONÍVEL NA</p>
-        <a href="https://play.google.com/store/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 40px;">
-        </a>
-      </div>
-      <div class="app-link">
-        <p>AVAIBLE ON THE</p>
-        <a href="https://www.apple.com/app-store/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style="height: 40px;">
-        </a>
-      </div>
+        <h2>Contatos:</h2>
+
+        <div class="icons-row">
+            <a href="https://www.instagram.com/">
+            <img src="IMG/index/insta.png" alt="Instagram">
+            </a>
+
+            <a href="https://web.whatsapp.com/">
+            <img src="IMG/index/—Pngtree—whatsapp icon whatsapp logo whatsapp_3584845.png" alt="Whatsapp">
+            </a>
+        </div>
     </div>
+
+    <div class="footer-coluna" id="cl4">
+        <h2>Desenvolvido pela Turma-144 de Desenvolvimento de Sistemas</h2>
+    </div>
+
     <div class="footer-rodape">
-      <p>&copy; 2025 by Peludinhos do Bem. Todos os direitos reservados.</p>
+        <p>&copy; 2025 by Peludinhos do Bem. Todos os direitos reservados.</p>
     </div>
-  </footer>
+    
+    </footer>
+
 </body>
 </html>
