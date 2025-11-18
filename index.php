@@ -209,7 +209,6 @@ session_start();
 	</main>
 
     <footer>
-  
     <div class="footer-coluna" id="cl1">
         <h2>Peludinhos do bem</h2>
         <p>08989-8989898</p>
