@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -17,27 +16,38 @@ session_start();
     <header>
         <nav class="navbar">
             <div class="logo">
-              <a href="index.html"><img src="IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+                <a href="index.php"><img src="IMG/Logotipo.jpg" alt="logo_Adote_Fácil"></a>
             </div>
-            <div class="dropdown">
-                <input type="checkbox" id="burger-menu">
-                <label class="burger" for="burger-menu">
+        <div class="dropdown">
+            <input type="checkbox" id="burger-menu">
+            <label class="burger" for="burger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-                </label>
+            </label>
+        <div class="dropdown-content">
+            <a href="index.php">Início</a>
+            <a href="Paginas/sobre.html">Sobre Nós</a>
+            <a href="Paginas/adote.php">Adote um pet</a>
+            <a href="Paginas/comoajudar.html">Como ajudar</a>
 
-                <div class="dropdown-content">
-                <a href="index.html" id="inicio">Início</a>
-                <a href="Paginas/sobre.html">Sobre Nós</a>
-                <a href="Paginas/adote.php">Adote um pet</a>
-                <a href="comoajudar.html">Como ajudar</a>
-                <?php if (isset($_SESSION['online']) && $_SESSION['online'] == true): ?>
-                    <a href="PHP/Usuario/perfil.php" id="bt-perfil">Perfil</a>
-                <?php else: ?>
-                    <a href="Paginas/entrar.html" id="bt-entrar">Entrar</a>
-                <?php endif; ?>
+            <?php if (!isset($_SESSION['usuario_id'])): ?>
+                <a href="Paginas/entrar.html" id="btn-entrar" class="botao-entrar">Entrar</a>
+            <?php else: ?>
+                <div class="usuario-box">
+                    <img src="IMG/usuario/<?php echo $_SESSION['usuario_foto']; ?>" 
+                         class="foto-perfil" alt="Foto">
+                    <span class="nome-user">
+                        <?php echo explode(" ", $_SESSION['usuario_nome'])[0]; ?>
+                    </span>
+                    <div class="dropdown-user">
+                        <a href="Paginas/perfil.php">Perfil</a>
+                        <a href="Paginas/editar-perfil.php">Editar Perfil</a>
+                        <a href="PHP/Usuario/logout.php">Sair</a>
+                    </div>
                 </div>
+            <?php endif; ?>
+            </div>
             </div>
         </nav>
     </header>

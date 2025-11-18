@@ -37,7 +37,7 @@ $doador = mysqli_fetch_assoc($result);
   <header>
     <nav class="navbar">
       <div class="logo">
-        <a href="index.html"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
+        <a href="../index.php"><img src="../IMG/Logotipo.jpg" alt="logo_Adote_Fácil" /></a>
       </div>
       <div class="dropdown">
         <input type="checkbox" id="burger-menu">
