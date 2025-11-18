@@ -11,6 +11,7 @@ session_start();
   <link rel="stylesheet" href="CSS/padrao.css">
   <link rel="stylesheet" href="CSS/index.css">
   <script src="JS/index.js" defer></script>
+  <script src="JS/padrao.js" defer></script>
 </head>
 <body>
     <header>
@@ -34,18 +35,20 @@ session_start();
             <?php if (!isset($_SESSION['usuario_id'])): ?>
                 <a href="Paginas/entrar.html" id="btn-entrar" class="botao-entrar">Entrar</a>
             <?php else: ?>
-                <div class="usuario-box">
+                <div class="usuario-box" id="userMenu">
                     <img src="IMG/usuario/<?php echo $_SESSION['usuario_foto']; ?>" 
-                         class="foto-perfil" alt="Foto">
-                    <span class="nome-user">
-                        <?php echo explode(" ", $_SESSION['usuario_nome'])[0]; ?>
-                    </span>
+                        class="foto-perfil" alt="Foto">
+
                     <div class="dropdown-user">
-                        <a href="Paginas/perfil.php">Perfil</a>
-                        <a href="Paginas/editar-perfil.php">Editar Perfil</a>
+                        <span class="nome-dropdown">
+                            <?php echo explode(" ", $_SESSION['usuario_nome'])[0]; ?>
+                        </span>
+
+                        <a href="PHP/Usuario/perfil.php">Perfil</a>
                         <a href="PHP/Usuario/logout.php">Sair</a>
                     </div>
                 </div>
+
             <?php endif; ?>
             </div>
             </div>
@@ -205,35 +208,40 @@ session_start();
 
 	</main>
 
-<footer>
+    <footer>
+  
     <div class="footer-coluna" id="cl1">
-      <h2>Peludinhos do bem</h2>
-      <p>08989-8989898</p>
-      <p>Rua Santa Helena, 21, Parque Alvorada, Imperatriz - MA, CEP 65919-505</p>
-      <p>adotefacil@peludinhosdobem.org</p>
+        <h2>Peludinhos do bem</h2>
+        <p>08989-8989898</p>
+        <p>Rua Santa Helena, 21, Parque Alvorada,<br> Imperatriz-MA, CEP 65919-505</p>
+        <p>adotefacil@peludinhosdobem.org</p>
     </div>
+
     <div class="footer-coluna" id="cl2">
-      <a href="sobre.html">
+        <a href="sobre.html"></a>
         <h2>Conheça a História da Peludinhos do Bem</h2>
-      </a>
     </div>
+
     <div class="footer-coluna" id="cl3">
-      <div class="app-link">
-        <p>DISPONÍVEL NA</p>
-        <a href="https://play.google.com/store/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" style="height: 40px;">
-        </a>
-      </div>
-      <div class="app-link">
-        <p>AVAIBLE ON THE</p>
-        <a href="https://www.apple.com/app-store/">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" style="height: 40px;">
-        </a>
-      </div>
+        <h2>Contatos</h2>
+
+        <div class="icons-row">
+            <a href="https://www.instagram.com/">
+            <img src="IMG/index/insta.png" alt="Instagram">
+            </a>
+
+            <a href="https://web.whatsapp.com/">
+            <img src="IMG/index/—Pngtree—whatsapp icon whatsapp logo whatsapp_3584845.png" alt="Whatsapp">
+            </a>
+        </div>
     </div>
+
+
     <div class="footer-rodape">
-      <p>&copy; 2025 by Peludinhos do Bem. Todos os direitos reservados.</p>
+        <p>Desenvolvido pela Turma-20 Tecnico de Informatica para Internet (Peludinhos do Bem). 2025 &copy;Todos os direitos reservados.</p>
     </div>
-  </footer>
+    
+    </footer>
+
 </body>
 </html>
