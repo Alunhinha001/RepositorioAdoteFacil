@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $sql = "INSERT INTO pet (nome, genero, peso, idade, especie, porte, raca, localidade, sobrePet, foto) VALUES ('$nome', '$genero', '$peso', '$idade', '$especie', '$porte', '$raca', '$localidade', '$sobre', '$caminhoImagem')";
     if (mysqli_query($conexao, $sql)) {
        echo "Cadastro realizado com sucesso!";
-       header("Location: ../../index.html");
+       header("Location: ../../index.php");
     } else {
         echo "Erro ao cadastrar: " . mysqli_error($conexao);
     }
