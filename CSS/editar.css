@@ -26,7 +26,6 @@ main {
   padding: calc(var(--header-height) + 20px) 20px 40px;
   min-height: 100vh;
 }
-<<<<<<< Updated upstream
 
 /* ======== TÍTULO ======== */
 h1 {
@@ -45,7 +44,6 @@ form {
   padding: 35px;
   width: 100%;
   max-width: 800px;
-=======
 /* ======== RESET E BASE ======== */
 * {
   margin: 0;
@@ -105,7 +103,6 @@ body {
 /* ======== FORMULÁRIO ======== */
 main {
   flex: 1;
->>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -172,28 +169,23 @@ button {
   background-color: #0077b6;
   color: white;
   border: none;
-<<<<<<< Updated upstream
   padding: 14px 25px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
-=======
   border-radius: 6px;
   padding: 12px;
->>>>>>> Stashed changes
   cursor: pointer;
   font-weight: 600;
   transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover,
-<<<<<<< Updated upstream
 button[type="submit"]:hover {
   background-color: #2d4d66;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-=======
 button:hover {
   background-color: #005f8e;
 }
@@ -209,7 +201,6 @@ form[action="deleter.php"] {
   flex-direction: column;
   align-items: center;
   gap: 15px; /* controla o espaço entre os elementos dentro do form */
->>>>>>> Stashed changes
 }
 
 /* Remove o <br> do layout (não quebra linha) */
@@ -247,31 +238,25 @@ form[action="deleter.php"] button:hover {
   font-weight: 600;
   text-decoration: none;
   text-align: center;
-<<<<<<< Updated upstream
   padding: 14px 0;
   border-radius: 10px;
   border: none;
   margin-top: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   font-family: "Poppins", sans-serif;
-=======
   border-radius: 8px;
   margin-top: -15px;
   padding: 10px 25px;
   font-size: 1rem;
   transition: all 0.3s ease;
   cursor: pointer;
->>>>>>> Stashed changes
 }
 
 .voltar-link:hover {
   background-color: #457b9d; /* cor ao passar o mouse */
   transform: translateY(-2px);
-<<<<<<< Updated upstream
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-=======
   box-shadow: 0 4px 10px rgba(69, 123, 157, 0.3);
->>>>>>> Stashed changes
 }
 
 
@@ -326,7 +311,6 @@ footer {
   margin-top: 10px;
 }
 
-<<<<<<< Updated upstream
 .form-actions>input[type="submit"],
 .form-actions>.voltar-link {
   flex: 1 1 0;
@@ -361,9 +345,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-=======
 .footer-rodape {
->>>>>>> Stashed changes
   width: 100%;
   text-align: center;
   padding-top: 15px;
@@ -372,7 +354,6 @@ header {
   font-size: 0.85em;
 }
 
-<<<<<<< Updated upstream
 .logo {
   display: flex;
   align-items: center;
@@ -383,15 +364,12 @@ header {
   max-width: 200px;
   max-height: 48px;
   height: auto;
-=======
 
 .pet-foto {
->>>>>>> Stashed changes
   display: block;
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-<<<<<<< Updated upstream
   font-weight: 600;
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
@@ -405,7 +383,6 @@ header {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-=======
   margin: 15px auto;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -432,4 +409,3 @@ header {
     display: flex;
   }
 }
->>>>>>> Stashed changes
