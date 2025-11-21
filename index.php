@@ -94,27 +94,30 @@ session_start();
 			<h1>Junte-se à Nossa Comunidade</h1>
 			<p>Todos podem fazer parte dessa transformação. Seja voluntário, apoie com doações ou ajude compartilhando nossos animais. Sua atitude pode mudar uma vida.</p>
 			<div class="opcoes-comunidade">
-				<div class="opcao">
-					<h2>Seja Voluntário</h2>
-					<p>Ajude nas feirinhas, lares temporários ou redes sociais.</p>
-					<button><a href="comoajudar.html">Seja um Voluntário</a></button>
-				</div>
-				<div class="opcao">
-					<h2>&#128176; | Apoie com Doações</h2>
-					<p>Sua atitude pode mudar uma vida</p>
-					<button><a href="comoajudar.html">Doe Agora</a></button>
-				</div>
-				<div class="opcao">
-					<h2>&#128227; | Compartilhe nas Redes</h2>
-					<p>Divulgue um pet e aumente as chances de adoção.</p>
-					<button>Divulgue</button>
-				</div>
-				<div class="opcao">
-					<h2>&#128722; | Parcerias Locais</h2>
-					<p>Tem um petshop ou clínica? Torne-se parceiro da causa.</p>
-					<button><a href="comoajudar.html">Fazer parceria</a></button>
-				</div>
-			</div>
+                <div class="opcao">
+                    <h2>Seja Voluntário</h2>
+                    <p>Ajude nas feirinhas, lares temporários ou redes sociais.</p>
+                    <a href="Paginas/comoajudar.html" class="botao-link">Seja um Voluntário</a>
+                </div>
+
+                <div class="opcao">
+                    <h2>&#128176; | Apoie com Doações</h2>
+                    <p>Sua atitude pode mudar uma vida</p>
+                    <a href="Paginas/comoajudar.html" class="botao-link">Doe Agora</a>
+                </div>
+
+                <div class="opcao">
+                    <h2>&#128227; | Compartilhe nas Redes</h2>
+                    <p>Divulgue um pet e aumente as chances de adoção.</p>
+                    <button class="botao-link">Divulgue</button>
+                </div>
+
+                <div class="opcao">
+                    <h2>&#128722; | Parcerias Locais</h2>
+                    <p>Tem um petshop ou clínica? Torne-se parceiro da causa.</p>
+                    <a href="Paginas/comoajudar.html" class="botao-link">Fazer parceria</a>
+                </div>
+            </div>
 		</section>
 
 		<section class="cards-vitrini">
@@ -209,37 +212,37 @@ session_start();
 	</main>
 
     <footer>
-    <div class="footer-coluna" id="cl1">
-        <h2>Peludinhos do bem</h2>
-        <p>08989-8989898</p>
-        <p>Rua Santa Helena, 21, Parque Alvorada,<br> Imperatriz-MA, CEP 65919-505</p>
-        <p>adotefacil@peludinhosdobem.org</p>
-    </div>
+        <section class="footer">
+            <div class="footer-coluna" id="cl1">
+                <h2>Peludinhos do bem</h2>
+                <p>08989-8989898</p>
+                <p>Rua Santa Helena, 21, Parque Alvorada,<br> Imperatriz-MA, CEP 65919-505</p>
+                <p>adotefacil@peludinhosdobem.org</p>
+            </div>
 
-    <div class="footer-coluna" id="cl2">
-        <a href="sobre.html"></a>
-        <h2>Conheça a História da Peludinhos do Bem</h2>
-    </div>
+            <div class="footer-coluna" id="cl2">
+                <a href="Paginas/sobre.html"><h2>Conheça a História da Peludinhos do Bem</h2></a>
+                
+            </div>
 
-    <div class="footer-coluna" id="cl3">
-        <h2>Contatos</h2>
+            <div class="footer-coluna" id="cl3">
+                <h2>Contatos</h2>
 
-        <div class="icons-row">
-            <a href="https://www.instagram.com/">
-            <img src="IMG/index/insta.png" alt="Instagram">
-            </a>
+                <div class="icons-row">
+                    <a href="https://www.instagram.com/">
+                    <img src="IMG/index/insta.png" alt="Instagram">
+                    </a>
 
-            <a href="https://web.whatsapp.com/">
-            <img src="IMG/index/—Pngtree—whatsapp icon whatsapp logo whatsapp_3584845.png" alt="Whatsapp">
-            </a>
+                    <a href="https://web.whatsapp.com/">
+                    <img src="IMG/index/—Pngtree—whatsapp icon whatsapp logo whatsapp_3584845.png" alt="Whatsapp">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-rodape">
+            <p>Desenvolvido pela Turma-20 Tecnico de Informatica para Internet (Peludinhos do Bem). 2025 &copy;Todos os direitos reservados.</p>
         </div>
-    </div>
-
-
-    <div class="footer-rodape">
-        <p>Desenvolvido pela Turma-20 Tecnico de Informatica para Internet (Peludinhos do Bem). 2025 &copy;Todos os direitos reservados.</p>
-    </div>
-    
     </footer>
 
 </body>
