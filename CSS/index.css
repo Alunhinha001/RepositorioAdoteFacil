@@ -176,6 +176,7 @@ main {
   margin-bottom: 20px;
 }
 
+
 .botao-link {
   display: inline-block; /* Faz o link aceitar padding e parecer um botão */
   padding: 12px 20px;    /* Aumentei um pouquinho pra ficar melhor de clicar */
