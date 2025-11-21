@@ -65,7 +65,7 @@ if ($result) {
                     <h2>Nome: <?php echo $animal['nome']; ?></h2>
                     <p><strong>Idade:</strong> <?php echo $animal['idade']; ?> anos</p>
                     <p><strong>Gênero:</strong> <?php echo $animal['genero']; ?></p>
-                    <p><strong>Local:</strong> <?php echo $animal['localidade']; ?></p>
+                    <p><strong>Situação:</strong> <?php echo $animal['situacao']; ?></p>
                 </div>
                 <div class="sobre">
                     <p><strong>Peso:</strong> <?php echo $animal['peso']; ?>kg</p>
@@ -81,7 +81,7 @@ if ($result) {
         <?php else: ?>
             <p>Nenhum usuario cadastrado.</p>
         <?php endif; ?>
-        </div>
+    </div>
             <div class="cadastro-pet-container">
                 <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
             </div>
