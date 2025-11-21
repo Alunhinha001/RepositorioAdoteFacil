@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$nome     = $_POST['nomeDoador'];
+$nome     = $_POST['nome'];
+$cpf      = $_POST['cpf'];
+$dataNasc = $_POST['dataNascimento'];
 $email    = $_POST['email'];
 $telefone = $_POST['telefone'];
 $whatsapp = $_POST['whats'];
@@ -50,10 +52,10 @@ if ($res->num_rows > 0) {
 $stmt->close();
 
 // inserir usuário
-$sql = "INSERT INTO cliente (nomeCompleto, email, telefone, whatsapp, estado, cidade, senha, foto)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO cliente (nome, cpf, data_nasc, email, telefone, whatsapp, estado, cidade, senha, foto)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conexao->prepare($sql);
-$stmt->bind_param('ssssssss', $nome, $email, $telefone, $whatsapp, $estado, $cidade, $senhaHash, $fotoNome);
+$stmt->bind_param('ssssssssss', $nome, $cpf, $dataNasc, $email, $telefone, $whatsapp, $estado, $cidade, $senhaHash, $fotoNome);
 
 if ($stmt->execute()) {
     // use $conexao->insert_id para pegar id

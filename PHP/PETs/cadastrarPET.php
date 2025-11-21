@@ -1,6 +1,5 @@
 <?php
-require_once '../conexao.php';
-echo "Conexão realizada";
+require_once '../../conexao.php';
 
 // Recebe os dados do formulário
 $nome = $_POST['nome'];
@@ -50,8 +49,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         echo "Erro ao cadastrar: " . mysqli_error($conexao);
     }
-} else {
-     $mensagem = "Erro ao mover a imagem para o servidor.";
-}
-}
-?>
+}};
