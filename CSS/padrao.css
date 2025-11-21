@@ -45,7 +45,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 10px;
+  padding: 10px 0px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -54,8 +54,9 @@ header {
 }
 
 .logo img {
-  width: 200px;
-  height: auto;
+  width: 210px;
+  height: 90px;
+  margin-left: -25px;
 }
 
 /* Botão hambúrguer */
@@ -216,123 +217,6 @@ header {
     background: #f5f5f5;
 }
 
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .burger {
-    display: block;
-  }
-
-  .dropdown-content {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    background: var(--azul-principal);
-    display: none;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  #burger-menu:checked ~ .dropdown-content {
-    display: flex;
-  }
-
-  .dropdown-content a {
-    margin: 5px 0;
-    border-radius: 6px;
-    text-align: center;
-  }
-}
-
-
-
-
-
-/* FOOTER REDUZIDO FISICAMENTE */
-footer {
-    background-color: var(--cinza-claro);
-    border-top: 3px solid var(--cinza-medio);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px calc((100vw - 1200px) / 2);  /* <-- diminuído */
-    font-family: Arial, sans-serif;
-    text-align: left;
-    gap: 40px;
-    color: #333;
-}
-footer h2{
-  color:  #4b0082;
-  white-space: nowrap;
-  margin-right: 70px;
-}
-
-.footer-coluna {
-    flex: 1 1 250px;
-    margin: 5px 10px;
-}
-
-/* Deixa tudo mais compacto */
-.footer-coluna p,
-.footer-coluna a {
-    margin: 2px 0;
-}
-#cl1{
-  width: 400px;
-}
-#cl1 p{
-  font-size: 14px;
-}
-
-
-#cl2{
-  width: 400px;
-  margin-left: 10px;
-}
-#cl2 a{
-  font-size: 16px;
-  text-decoration: none;
-}
-
-
-/* Coluna dos contatos */
-#cl3 {
-  width: 400px;
-  margin-left: 150px;
-    flex: 1 1 200px;
-    display: flex;
-    flex-direction: column;
-    color:  #4b0082;
-}
-
-
-/* LINHA COM AS LOGOS */
-.icons-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;                /* espaço entre ícones */
-    margin-top: 5px;
-}
-
-/* TAMANHO PADRÃO DAS LOGOS */
-.icons-row img {
-    height: 50px;
-    width: auto;
-}
-
-/* Footer final */
-.footer-rodape {
-    width: 100%;
-    text-align: center;
-    padding-top: 10px;
-    margin-top: -20px;
-    font-size: 13px;
-    border-top: 1px solid #ddd;
-}
-
-
 /* ===== MENU HAMBURGUER DO PERFIL ===== */
 
 .perfil-menu {
@@ -411,51 +295,217 @@ footer h2{
   border-top: 1px solid #eee;
 }
 
+/* MOBILE */
+@media (max-width: 900px) {
+  .burger {
+    display: block;
+  }
+
+  .dropdown-content {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background: var(--azul-principal);
+    display: none;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  #burger-menu:checked ~ .dropdown-content {
+    display: flex;
+  }
+
+  .dropdown-content a {
+    margin: 5px 0;
+    border-radius: 6px;
+    text-align: center;
+  }
+}
 
 
-/* === RESPONSIVIDADE PARA FOOTER === */
-@media (max-width: 900px) and (min-width: 601px) {
-    footer {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        justify-content: space-between;
+/* =========================================
+   VERSÃO DESKTOP
+   ========================================= */
+footer {
+    background-color: var(--cinza-claro);
+    border-top: 3px solid var(--cinza-medio);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    width: 100%;
+    gap: 40px;
+    color: #333;
+}
+
+footer h2 {
+    color: #4b0082;
+    white-space: nowrap;
+    margin-right: 70px;
+}
+
+.footer {
+    display: flex;
+    width: 1200px;
+    height: 150px;
+}
+
+.footer-coluna {
+    flex: 1 1 250px;
+    margin: 5px 10px;
+}
+
+.footer-coluna p,
+.footer-coluna a {
+    margin: 2px 0;
+}
+
+#cl1 {
+    width: 400px;
+}
+
+#cl2 {
+    width: 400px;
+    margin-left: 10px;
+}
+
+#cl3 {
+    width: 400px;
+    margin-left: 150px;
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    color: #4b0082;
+}
+
+#cl1 p {
+    font-size: 14px;
+}
+
+/* --- LINK DISCRETO E ELEGANTE --- */
+#cl2 a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #4b0082;
+    font-weight: bold;       /* Negrito para diferenciar do resto */
+    border-bottom: 1px solid transparent; /* Linha invisível para não pular */
+    padding-bottom: 1px;     /* Afasta um pouquinho a linha do texto */
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse: aparece uma linha fina */
+#cl2 a:hover {
+    border-bottom: 1px solid #4b0082;
+    opacity: 0.8;            /* Leve transparência */
+}
+/* -------------------------------- */
+
+.icons-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.icons-row img {
+    height: 50px;
+    width: auto;
+}
+
+.footer-rodape {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    margin-top: -20px;
+    font-size: 13px;
+    border-top: 1px solid #ddd;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Tablet e Mobile)
+   ========================================= */
+
+/* TABLET (Menor que 1200px até 601px) */
+@media (max-width: 1200px) {
+    .footer {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        justify-content: center;
     }
-    .footer-coluna {
-        flex-basis: 45%;
-        max-width: 45%;
-        margin: 10px 2.5%;
-        text-align: left; 
+
+    #cl1, #cl2, #cl3 {
+        width: auto;
+        margin-left: 0;
+        margin-bottom: 20px;
+        flex: 1 1 40%;
     }
-    .app-link {
-        align-items: flex-start; 
+
+    footer h2 {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+    
+    #cl1 p, #cl2 a {
+        font-size: 14px;
     }
 }
 
+/* MOBILE (Menor que 600px) */
 @media (max-width: 600px) {
     footer {
         flex-direction: column;
+        padding: 10px !important;
+        gap: 10px;
+    }
+
+    .footer {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
         align-items: center;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
     }
-    .footer-coluna {
-        max-height: 200px;
-        text-align: justify;
+
+    .footer-coluna, #cl1, #cl2, #cl3 {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 20px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    #cl1 {
-        flex: 1 1 100%;
-        max-height: 50%;
+
+    /* Textos bem menores no mobile */
+    footer h2 {
+        font-size: 16px;
+        margin-right: 0;
         margin-bottom: 10px;
     }
-    #cl2{
-        flex: 1 1 100%;
-        max-height: 50%;
+
+    #cl1 p {
+        font-size: 13px;
+        line-height: 1.4;
     }
-    #cl3 {
-        flex: 1 1 100%;
-        max-height: 50%;
+
+    #cl2 a {
+        font-size: 14px;
+        margin-top: 5px;
+        /* No mobile, deixamos a linha sempre visível mas bem clarinha
+           para indicar clique sem precisar passar o mouse */
+        border-bottom: 1px solid rgba(75, 0, 130, 0.3); 
     }
-    .app-link {
-        align-items: center;
+
+    .icons-row img {
+        height: 35px;
+    }
+    
+    .footer-rodape {
+        margin-top: 0;
+        font-size: 11px;
     }
 }

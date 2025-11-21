@@ -176,27 +176,50 @@ main {
   margin-bottom: 20px;
 }
 
-.opcao button {
-  padding: 10px 15px;
+.botao-link {
+  display: inline-block; /* Faz o link aceitar padding e parecer um botão */
+  padding: 12px 20px;    /* Aumentei um pouquinho pra ficar melhor de clicar */
   border-radius: 12px;
   border: none;
   background-color: rgb(62, 62, 175);
-  color: white;
+  color: white !important; /* Força o texto a ser branco */
   font-weight: bold;
+  text-decoration: none;   /* Remove o sublinhado do link */
   cursor: pointer;
   transition: background-color 0.3s;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  font-family: Arial, sans-serif; /* Garante a fonte certa */
+  font-size: 14px;
 }
 
-.opcao button a{
-  color: #fff;
-  text-decoration: none;
+.botao-link:hover,
+.botao-link:focus {
+  background-color: rgb(51, 51, 143);
+  outline: none;
 }
 
 .opcao button:hover,
 .opcao button:focus {
   background-color: rgb(51, 51, 143);
   outline: none;
+}
+/* === FORÇANDO 1 COLUNA NO MOBILE === */
+/* Aumentei para 1000px para garantir que tablets também peguem essa regra */
+@media (max-width: 1000px) {
+    
+    .opcoes-comunidade {
+        /* Desliga o Grid e liga o Flexbox */
+        display: flex !important;
+        flex-direction: column !important; /* Um embaixo do outro */
+        gap: 20px !important;
+    }
+
+    .opcao {
+        /* Garante que o cartão ocupe a largura total */
+        width: 100% !important; 
+        margin: 0 !important; /* Remove margens laterais que atrapalham */
+        box-sizing: border-box; /* Garante que o padding não estoure a tela */
+    }
 }
 
 /* === CARDS VITRINE === */
