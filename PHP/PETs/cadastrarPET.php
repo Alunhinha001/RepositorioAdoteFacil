@@ -10,7 +10,7 @@ $idade = $_POST['idade'];
 $especie = $_POST['especie'];
 $porte = $_POST['porte'];
 $raca = $_POST['raca'];
-$localidade = $_POST['local'];
+$situacao = $_POST['situacao'];
 $sobre = $_POST['sobre'];
 
 //------------------------------PROCESSANDO IMAGEM-------------------------------------------
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $mensagem = "Upload realizado com sucesso!";
         $caminhoImagem = $caminhoFinal;
 //---------------------FIM PROCESSO IMAGEM---------------------------------------------------------------------------------------
-        $sql = "INSERT INTO pet (nome, genero, peso, idade, especie, porte, raca, localidade, sobrePet, foto) VALUES ('$nome', '$genero', '$peso', '$idade', '$especie', '$porte', '$raca', '$localidade', '$sobre', '$caminhoImagem')";
+        $sql = "INSERT INTO pet (nome, genero, peso, idade, especie, porte, raca, situacao, sobrePet, foto) VALUES ('$nome', '$genero', '$peso', '$idade', '$especie', '$porte', '$raca', '$situacao','$sobre', '$caminhoImagem')";
     if (mysqli_query($conexao, $sql)) {
        echo "Cadastro realizado com sucesso!";
        header("Location: ../../index.php");
