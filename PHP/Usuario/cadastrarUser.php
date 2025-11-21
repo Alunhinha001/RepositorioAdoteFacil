@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$nome     = $_POST['nomeDoador'];
+$nome     = $_POST['nome'];
 $cpf      = $_POST['cpf'];
 $dataNasc = $_POST['dataNascimento'];
 $email    = $_POST['email'];
