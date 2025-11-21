@@ -16,7 +16,9 @@ $id_usuario = $_SESSION['usuario_id'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Sanitização
-    $nome = $_POST['nomeDoador'];
+    $nome = $_POST['nome'];
+    $cpf = $_POST['cpf'];
+    $dataNasc = $_POST['dataNascimento'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
     $whatsapp = $_POST['whats'];
@@ -35,7 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Monta UPDATE
     $sql = "UPDATE cliente SET 
-            nomeCompleto = ?, 
+            nomeCompleto = ?,
+            cpf = ?,
+            data_nasc = ?,
             email = ?, 
             telefone = ?, 
             whatsapp = ?, 
@@ -132,10 +136,22 @@ $usuario = $res->fetch_assoc();
 
         <div class="info">
             <label>Nome Completo:</label>
-            <input type="text" name="nomeDoador" 
-                   value="<?= htmlspecialchars($usuario['nomeCompleto']) ?>" required>
+            <input type="text" name="nome" 
+                   value="<?= htmlspecialchars($usuario['nome']) ?>" required>
         </div>
 
+        <div class="info">
+            <label>CPF:</label>
+            <input type="email" name="cpf" 
+                   value="<?= htmlspecialchars($usuario['cpf']) ?>" required>
+        </div>
+        
+        <div class="info">
+            <label>Data de Nascimento:</label>
+            <input type="email" name="dataNascimento" 
+                   value="<?= htmlspecialchars($usuario['data_nasc']) ?>" required>
+        </div>
+        
         <div class="info">
             <label>E-mail:</label>
             <input type="email" name="email" 

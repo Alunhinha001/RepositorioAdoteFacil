@@ -82,8 +82,16 @@ $usuario = $result->fetch_assoc();
             <img src="../../IMG/usuario/<?= htmlspecialchars($usuario['foto']) ?>" alt="Foto do perfil" class="fotoPerfil">
         </div>
         <div class="info">
-            <strong>Nome:</strong> <?= htmlspecialchars($usuario['nomeCompleto']) ?>
+            <strong>Nome:</strong> <?= htmlspecialchars($usuario['nome']) ?>
         </div>
+        <div class="info">
+            <strong>CPF:</strong> <?= htmlspecialchars($usuario['cpf']) ?>
+        </div>
+        
+        <div class="info">
+            <strong>Data de Nascimento:</strong> <?= htmlspecialchars($usuario['data_nasc']) ?>
+        </div>
+        
         <div class="info">
             <strong>E-mail:</strong> <?= htmlspecialchars($usuario['email']) ?>
         </div>

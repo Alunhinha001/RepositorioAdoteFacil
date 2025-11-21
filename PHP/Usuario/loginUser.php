@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$sql = "SELECT id_cliente, nomeCompleto, email, senha, foto 
+$sql = "SELECT id_cliente, nome, email, senha, foto 
         FROM cliente 
         WHERE email = ?";
 $stmt = $conexao->prepare($sql);
@@ -30,7 +30,7 @@ if (password_verify($senha, $user['senha'])) {
 
     // SESSÕES COM OS NOMES CORRETOS
     $_SESSION['usuario_id']    = $user['id_cliente'];
-    $_SESSION['usuario_nome']  = $user['nomeCompleto'];
+    $_SESSION['usuario_nome']  = $user['nome'];
     $_SESSION['usuario_email'] = $user['email'];
     $_SESSION['usuario_foto']  = $user['foto'];
 

@@ -26,7 +26,9 @@
                 if(mysqli_num_rows($resultado)==1): // se email e senha "baterem" inicia as sessões
                     $dados = mysqli_fetch_array($resultado);
                     $_SESSION['online'] = true;
-                    $_SESSION['nomeUsuario'] = $dados['nomeCompleto'];
+                    $_SESSION['nomeUsuario'] = $dados['nome'];
+                    $_SESSION['cpfUsuario'] = $dados['cpf'];
+                    $_SESSION['DataNascUsuario'] = $dados['data_nasc'];
                     $_SESSION['emailUsuario'] = $dados['email'];
                     $_SESSION['senhaUsuario'] = $dados['senha'];
                     $_SESSION['telefoneUsuario'] = $dados['telefone'];
