@@ -1,5 +1,6 @@
 <?php
 include('../PHP/conexao.php');
+session_start();
 
 $sql = "SELECT * FROM pet ORDER BY id_pet DESC";
 $result = mysqli_query($conexao, $sql);
@@ -171,7 +172,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['busca'])) {
     <?php endif; ?>
         </div>
             <div class="cadastro-pet-container">
-                <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
+                <a href="cadastropet.php" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
             </div>
     </main>
 
