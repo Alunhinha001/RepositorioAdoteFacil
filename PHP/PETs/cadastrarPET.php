@@ -51,8 +51,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $caminhoImagem = $caminhoFinal;
 //---------------------FIM PROCESSO IMAGEM---------------------------------------------------------------------------------------
 $sql = "INSERT INTO pet 
-(id_cliente, nome, genero, peso, idade, especie, porte, raca, situacao, sobrePet, foto)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+(id_cliente, nome, genero, peso, idade, especie, porte, raca, situacao, sobrePet, foto, statusPet)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'disponivel')";
 
 $stmt = $conexao->prepare($sql);
 $stmt->bind_param(
@@ -69,13 +69,17 @@ $stmt->bind_param(
     $sobre,
     $caminhoImagem
 );
-
 if ($stmt->execute()) {
+    $id_pet = $stmt->insert_id;
+
+    $sqlHistorico = "INSERT INTO historico (id_pet, id_cliente, status_pet)
+                     VALUES (?, ?, 'disponivel')";
+    $stmtH = $conexao->prepare($sqlHistorico);
+    $stmtH->bind_param("ii", $id_pet, $id_cliente);
+    $stmtH->execute();
+
     header("Location: ../../index.php");
     exit;
-} else {
-    echo "Erro ao cadastrar: " . $stmt->error;
 }
-
 }};
 ?>
