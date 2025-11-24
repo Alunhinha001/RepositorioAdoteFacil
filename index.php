@@ -12,6 +12,7 @@ session_start();
   <link rel="stylesheet" href="CSS/index.css">
   <script src="JS/index.js" defer></script>
   <script src="JS/padrao.js" defer></script>
+  <script src="JS/depoimentos.js" defer></script>
 </head>
 <body>
     <header>
@@ -208,8 +209,108 @@ session_start();
                 <a href="Paginas/adote.php">Veja mais <br><img src="IMG/index/Seta-cinza.png" alt=""></a>
             </nav>
 		</section>
-
 	</main>
+<div class="container-depoimentos">
+    <div class="header-depoimentos">
+        <h1>O que dizem sobre os peludinhos do bem?</h1>
+    </div>
+
+    <div class="carousel-wrapper">
+        <button class="carousel-nav prev" onclick="moveCarousel(-1)">‹</button>
+        <button class="carousel-nav next" onclick="moveCarousel(1)">›</button>
+        
+        <div class="carousel-container" id="carouselContainer">
+            
+            <div class="testimonial-card">
+                <div class="author-info">
+                    <img src="IMG/comoajudar/depoimento1.jpg" class="author-photo">
+                    <div class="author-details">
+                        <h3>Maria S.</h3>
+                        <p>Tutora do Thor</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Adotar com a Peludinhos do Bem mudou minha vida e a do Thor..."
+                </div>
+                <div class="stars"><span class="star">★★★★★</span></div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="author-info">
+                    <img src="IMG/comoajudar/depoimentos5.JPG" class="author-photo">
+                    <div class="author-details">
+                        <h3>João, o Gato</h3>
+                        <p>Tutor do Rex</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Ter adotado aqui foi uma das melhores decisões..."
+                </div>
+                <div class="stars"><span class="star">★★★★★</span></div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="author-info">
+                    <img src="IMG/comoajudar/depoimento3.jpg" class="author-photo">
+                    <div class="author-details">
+                        <h3>Marcelo M.</h3>
+                        <p>Voluntário</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Doar um pouco do meu tempo me fez sentir parte de algo maior..."
+                </div>
+                <div class="stars"><span class="star">★★★★★</span></div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="author-info">
+                    <img src="IMG/comoajudar/depoimento6.png" class="author-photo">
+                    <div class="author-details">
+                        <h3>Carlos R.</h3>
+                        <p>Apoiador</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Conhecer o trabalho da Peludinhos do Bem me inspirou muito..."
+                </div>
+                <div class="stars"><span class="star">★★★★★</span></div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="author-info">
+                    <img src="IMG/comoajudar/depoimento2.jpg" class="author-photo">
+                    <div class="author-details">
+                        <h3>Ana Paula</h3>
+                        <p>Tutora da Luna</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "A Luna chegou na minha vida e trouxe tanta alegria!"
+                </div>
+                <div class="stars"><span class="star">★★★★★</span></div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="author-info">
+                    <img src="IMG/comoajudar/depoimento4.jpg" class="author-photo">
+                    <div class="author-details">
+                        <h3>Pedro Santos</h3>
+                        <p>Tutor do Bob</p>
+                    </div>
+                </div>
+                <div class="testimonial-text">
+                    "Adotar foi fácil, teve acompanhamento e tudo..."
+                </div>
+                <div class="stars"><span class="star">★★★★★</span></div>
+            </div>
+
+        </div>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+</div>
+
 
     <footer>
         <section class="footer">
