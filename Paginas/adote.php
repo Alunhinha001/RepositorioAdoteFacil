@@ -1,7 +1,8 @@
 <?php
 include('../PHP/conexao.php');
+session_start();
 
-$sql = "SELECT * FROM pet ORDER BY id_pet DESC";
+$sql = "SELECT * FROM pet WHERE statusPet = 'disponivel' ORDER BY id_pet DESC";
 $result = mysqli_query($conexao, $sql);
 
 if ($result) {
@@ -20,10 +21,11 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['busca'])) {
     $termo = trim($_GET['busca']);
 
     $sql = "SELECT * FROM pet 
-            WHERE porte LIKE ? 
-            OR raca LIKE ?
-            OR nome LIKE ?
-            OR especie LIKE ?";
+        WHERE statusPet = 'disponivel' 
+        AND (porte LIKE ? 
+        OR raca LIKE ?
+        OR nome LIKE ?
+        OR especie LIKE ?)";
 
     $stmt = mysqli_prepare($conexao, $sql);
     $like = "%" . $termo . "%";
@@ -171,7 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['busca'])) {
     <?php endif; ?>
         </div>
             <div class="cadastro-pet-container">
-                <a href="cadastropet.html" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
+                <a href="cadastropet.php" class="cadastro-pet-btn">Quero cadastrar meu pet</a>
             </div>
     </main>
 
