@@ -237,7 +237,7 @@ session_start();
 
             <div class="testimonial-card">
                 <div class="author-info">
-                    <img src="IMG/comoajudar/depoimentos5.JPG" class="author-photo">
+                    <img src="IMG/comoajudar/depoimentos5.png" class="author-photo">
                     <div class="author-details">
                         <h3>João, o Gato</h3>
                         <p>Tutor do Rex</p>
@@ -265,7 +265,7 @@ session_start();
 
             <div class="testimonial-card">
                 <div class="author-info">
-                    <img src="IMG/comoajudar/depoimento6.png" class="author-photo">
+                    <img src="IMG/comoajudar/depoimentos.apoiador.png" class="author-photo">
                     <div class="author-details">
                         <h3>Carlos R.</h3>
                         <p>Apoiador</p>
